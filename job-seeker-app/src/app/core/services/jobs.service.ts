@@ -8,11 +8,6 @@ import { jobsMock } from '../../feature/jobs/jobs.mock';
 export class JobsService {
   jobs = signal<Job[]>(jobsMock);
   appliedJobs = signal<Job[]>([]);
-  // Prvin mi bese napraveno so computed zatoa sto samo mi
-  // go resavase dodavanjeto i brisenjeto na jobs od nizite pri promena na isApplied, bez racno vo funkcii da gi update
-  // appliedJobs = computed<Job[]>(() => {
-  //   return this.jobs().filter((job) => job.isApplied);
-  // });
 
   totalAppliedJobs = computed<number>(() => {
     return this.appliedJobs().length;
