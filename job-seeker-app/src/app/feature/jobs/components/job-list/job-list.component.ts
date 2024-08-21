@@ -14,11 +14,9 @@ import { ButtonComponent } from '../../../../core/components/button/button.compo
 export class JobListComponent {
   readonly filterValue = JobWorkTypeFilter;
   private jobsService = inject(JobsService);
-  totalJobNumer = computed<number>(() => {
-    return this.jobsService.totalJobs();
-  });
+
   jobs = computed<Job[]>(() => {
-    return this.jobsService.jobs();
+    return this.jobsService.jobs().filter((job) => !job.isApplied);
   });
 
   onClickSort() {

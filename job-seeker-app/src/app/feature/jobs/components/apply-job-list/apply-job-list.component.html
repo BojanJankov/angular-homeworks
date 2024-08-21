@@ -1,5 +1,5 @@
 <div class="container">
-  <h3>Your apply job list:({{ totalAppliedJobNumer() }})</h3>
+  <h3>Applied jobs:({{ totalAppliedJobNumer() }})</h3>
   <div class="job-list-container">
     @for(job of appliedJobs(); track job.id){
     <app-apply-job-item [appliedJob]="job"></app-apply-job-item>

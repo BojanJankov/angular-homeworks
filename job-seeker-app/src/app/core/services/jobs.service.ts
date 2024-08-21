@@ -8,48 +8,57 @@ import { jobsMock } from '../../feature/jobs/jobs.mock';
 export class JobsService {
   jobs = signal<Job[]>(jobsMock);
   appliedJobs = signal<Job[]>([]);
-  totalJobs = computed<number>(() => {
-    return this.jobs().length;
-  });
+  // Prvin mi bese napraveno so computed zatoa sto samo mi
+  // go resavase dodavanjeto i brisenjeto na jobs od nizite pri promena na isApplied, bez racno vo funkcii da gi update
+  // appliedJobs = computed<Job[]>(() => {
+  //   return this.jobs().filter((job) => job.isApplied);
+  // });
+
   totalAppliedJobs = computed<number>(() => {
     return this.appliedJobs().length;
   });
 
   onApplyJob(id: number) {
-    const isExists = this.appliedJobs().find((job) => job.id === id);
-
-    if (isExists) return;
-
-    const foundJob = this.jobs().find((job) => job.id === id);
-
-    if (!foundJob) return;
-
-    const updatedJobs = this.jobs().filter((job) => job.id !== id);
-
-    this.jobs.set(updatedJobs);
-    this.appliedJobs.update((prev) => [...prev, foundJob]);
+    this.jobs.update((prev) =>
+      prev.map((job) => {
+        if (job.id === id) {
+          job.isApplied = true;
+          return job;
+        } else {
+          return job;
+        }
+      })
+    );
+    this.appliedJobs.set(this.jobs().filter((job) => job.isApplied));
   }
 
   onCancelJob(id: number) {
-    const updatedAppliedJobs = this.appliedJobs().filter(
-      (job) => job.id !== id
+    this.jobs.update((prev) =>
+      prev.map((job) => {
+        if (job.id === id) {
+          job.isApplied = false;
+          return job;
+        } else {
+          return job;
+        }
+      })
     );
 
-    const foundJob = this.appliedJobs().find((job) => job.id === id);
-
-    this.jobs.update((prev) => [...prev, foundJob]);
-
-    this.appliedJobs.set(updatedAppliedJobs);
+    this.appliedJobs.set(this.jobs().filter((job) => job.isApplied));
   }
 
   sortBySalary() {
-    this.jobs().sort((a, b) => a.startingSalary - b.startingSalary);
+    const copyArr = [...this.jobs()];
+    copyArr.sort((a, b) => b.startingSalary - a.startingSalary);
+    this.jobs.set(copyArr);
   }
 
   sortByWork(value: string) {
-    const filteredList = this.jobs().filter((job) => job.workType === value);
+    let copyJobArray: Job[] = [...this.jobs()];
 
-    this.jobs.set(filteredList);
+    copyJobArray = jobsMock.filter((job) => job.workType === value);
+
+    this.jobs.set(copyJobArray);
   }
 
   resetFilter() {

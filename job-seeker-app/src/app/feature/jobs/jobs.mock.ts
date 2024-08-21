@@ -29,7 +29,7 @@ export const jobsMock: Job[] = [
       "Master's degree in Environmental Science or related field, experience in sustainability projects.",
     description:
       'Help us create innovative solutions for environmental challenges. Mix of remote and onsite work.',
-    isApplied: true,
+    isApplied: false,
   },
   {
     id: 3,
@@ -59,7 +59,7 @@ export const jobsMock: Job[] = [
       "Bachelor's degree in Healthcare Administration, experience with medical office management.",
     description:
       'Oversee healthcare facility operations with a mix of remote and onsite duties. Improve patient care and administrative processes.',
-    isApplied: true,
+    isApplied: false,
   },
   {
     id: 5,
@@ -104,7 +104,7 @@ export const jobsMock: Job[] = [
       "Bachelor's degree in Cybersecurity or related field, certifications such as CISSP or CISM.",
     description:
       'Protect our digital assets and ensure data security. Remote work with occasional travel to headquarters.',
-    isApplied: true,
+    isApplied: false,
   },
   {
     id: 8,
@@ -134,7 +134,7 @@ export const jobsMock: Job[] = [
       "Bachelor's degree in Business or Engineering, experience in product development and management.",
     description:
       'Lead product development from concept to launch. Remote position with flexible working arrangements.',
-    isApplied: true,
+    isApplied: false,
   },
   {
     id: 10,
@@ -164,6 +164,6 @@ export const jobsMock: Job[] = [
       "Bachelor's degree in Design or related field, strong portfolio of UX/UI work.",
     description:
       'Design intuitive and engaging user interfaces. Hybrid role with both remote and onsite work in Philadelphia.',
-    isApplied: true,
+    isApplied: false,
   },
 ];

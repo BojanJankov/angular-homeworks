@@ -16,4 +16,13 @@
       (btnClick)="onCancelClick(appliedJob().id)"
     ></app-button>
   </div>
+  <div class="more-details-container" appToogleDetails>
+    <h4>More details ⬇️</h4>
+    <div class="more-details">
+      <p><strong>Location:</strong> {{ appliedJob().location }}</p>
+      <p><strong>Country:</strong> {{ appliedJob().country }}</p>
+      <p><strong>Qualifications:</strong> {{ appliedJob().qualifications }}</p>
+      <p><strong>About:</strong> {{ appliedJob().description }}</p>
+    </div>
+  </div>
 </div>

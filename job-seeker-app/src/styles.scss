@@ -90,3 +90,11 @@ main {
     border: 1px solid black;
   }
 }
+
+.more-details-container {
+  cursor: pointer;
+  h4 {
+    margin: 0;
+    cursor: pointer;
+  }
+}

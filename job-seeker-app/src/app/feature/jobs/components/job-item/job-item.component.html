@@ -13,4 +13,13 @@
   <div class="apply-button-container">
     <app-button text="Apply" (btnClick)="onApplyClick(job().id)"></app-button>
   </div>
+  <div class="more-details-container" appToogleDetails>
+    <h4>More details ⬇️</h4>
+    <div class="more-details">
+      <p><strong>Location:</strong> {{ job().location }}</p>
+      <p><strong>Country:</strong> {{ job().country }}</p>
+      <p><strong>Qualifications:</strong> {{ job().qualifications }}</p>
+      <p><strong>About:</strong> {{ job().description }}</p>
+    </div>
+  </div>
 </div>

@@ -3,11 +3,12 @@ import { Job } from '../../models/job.model';
 import { CommonModule } from '@angular/common';
 import { JobsService } from '../../../../core/services/jobs.service';
 import { ButtonComponent } from '../../../../core/components/button/button.component';
+import { ToogleDetailsDirective } from '../../../../core/directives/toogle-details.directive';
 
 @Component({
   selector: 'app-apply-job-item',
   standalone: true,
-  imports: [CommonModule, ButtonComponent],
+  imports: [CommonModule, ButtonComponent, ToogleDetailsDirective],
   templateUrl: './apply-job-item.component.html',
   styleUrl: './apply-job-item.component.scss',
 })
