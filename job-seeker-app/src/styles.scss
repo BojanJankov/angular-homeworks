@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap");
+
+html {
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.container {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
+  color: black;
+  padding: 30px;
+}
+
+.job-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.job-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.job-item {
+  height: max-content;
+  background-color: slateblue;
+  border-radius: 4px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.job-item-heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.job-item-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.button {
+  width: 80px;
+  height: 30px;
+  background-color: white;
+  color: slateblue;
+  border: 0.5px solid slategray;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+
+  &:hover {
+    border: 1px solid black;
+  }
+}

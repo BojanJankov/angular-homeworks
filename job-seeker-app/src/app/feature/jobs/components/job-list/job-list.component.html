@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="job-list-heading">
+    <h3>Job list:({{ totalJobNumer() }})</h3>
+    <div>
+      <app-button text="Salary" (btnClick)="onClickSort()"></app-button>
+      <app-button
+        text="Remote"
+        (btnClick)="onFilterButtonClick(filterValue.REMOTE)"
+      ></app-button>
+      <app-button
+        text="Onsite"
+        (btnClick)="onFilterButtonClick(filterValue.ONSITE)"
+      ></app-button>
+      <app-button
+        text="Hybrid"
+        (btnClick)="onFilterButtonClick(filterValue.HYBRID)"
+      ></app-button>
+      <app-button text="Reset" (btnClick)="onResetClick()"></app-button>
+    </div>
+  </div>
+  <div class="job-list-container">
+    @for(job of jobs(); track job.id){
+    <app-job-item [job]="job"></app-job-item>
+    }
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="job-item">
+  <div class="job-item-heading-container">
+    <h2>{{ job().company }}</h2>
+    <p>{{ job().position }}</p>
+  </div>
+  <div class="job-item-info-container">
+    <p>
+      <i class="fa-regular fa-clock"></i> {{ job().expires | date }} |
+      {{ job().workType }}
+    </p>
+    <p>{{ job().startingSalary | currency : "EUR" }}</p>
+  </div>
+  <div class="apply-button-container">
+    <app-button text="Apply" (btnClick)="onApplyClick(job().id)"></app-button>
+  </div>
+</div>

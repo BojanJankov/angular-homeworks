@@ -1,0 +1,19 @@
+<div class="job-item">
+  <div class="job-item-heading-container">
+    <h2>{{ appliedJob().company }}</h2>
+    <p>{{ appliedJob().position }}</p>
+  </div>
+  <div class="job-item-info-container">
+    <p>
+      <i class="fa-regular fa-clock"></i> {{ appliedJob().expires | date }} |
+      {{ appliedJob().workType }}
+    </p>
+    <p>{{ appliedJob().startingSalary | currency : "EUR" }}</p>
+  </div>
+  <div class="cancel-button-container">
+    <app-button
+      text="Cancel"
+      (btnClick)="onCancelClick(appliedJob().id)"
+    ></app-button>
+  </div>
+</div>
