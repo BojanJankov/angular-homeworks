@@ -1,6 +1,7 @@
 .home-page {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 100px;
   min-height: 500px;
 }
 
@@ -13,4 +14,9 @@
   h1 {
     font-size: 36px;
   }
+}
+
+.home-page-logo-container {
+  display: grid;
+  place-items: center;
 }
