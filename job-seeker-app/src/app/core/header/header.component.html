@@ -1,3 +1,21 @@
 <header class="header">
-  <h1>Job Seeker App</h1>
+  <h1>Job Seeker</h1>
+  <nav class="nav">
+    <ul>
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+      </li>
+      <li><a routerLink="/jobs" routerLinkActive="active">Jobs</a></li>
+      <li>
+        <a routerLink="/profile" routerLinkActive="active">
+          <i class="fa-regular fa-user"></i
+        ></a>
+      </li>
+    </ul>
+  </nav>
 </header>

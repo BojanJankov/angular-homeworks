@@ -2,7 +2,7 @@ import { Component, inject, input } from '@angular/core';
 import { Job } from '../../models/job.model';
 import { CommonModule } from '@angular/common';
 import { JobsService } from '../../../../core/services/jobs.service';
-import { ButtonComponent } from '../../../../core/components/button/button.component';
+import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { ToogleDetailsDirective } from '../../../../core/directives/toogle-details.directive';
 
 @Component({

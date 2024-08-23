@@ -1,8 +1,8 @@
-import { Component, computed, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { JobsService } from '../../../../core/services/jobs.service';
 import { Job, JobWorkTypeFilter } from '../../models/job.model';
 import { JobItemComponent } from '../job-item/job-item.component';
-import { ButtonComponent } from '../../../../core/components/button/button.component';
+import { ButtonComponent } from '../../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-job-list',
