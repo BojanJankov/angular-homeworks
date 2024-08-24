@@ -1,1 +1,12 @@
+.search-input {
+  height: 20px;
+  border: 0.5px solid slategray;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px;
 
+  &:hover {
+    border: 1px solid black;
+  }
+}

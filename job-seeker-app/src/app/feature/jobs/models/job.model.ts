@@ -1,6 +1,13 @@
 export interface Job {
   id: number;
-  company: string;
+  company: {
+    logo: string;
+    name: string;
+    employees: string;
+    description: string;
+    state: string;
+    website: string;
+  };
   expires: string;
   position: string;
   startingSalary: number;

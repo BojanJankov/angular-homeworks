@@ -1,4 +1,9 @@
 .job-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.job-lists-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;

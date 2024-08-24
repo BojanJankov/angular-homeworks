@@ -1,1 +1,29 @@
-<p>comapny-details works!</p>
+<section class="company-details-page">
+  <div class="company-details">
+    <div class="company-heading">
+      <div class="company-logo-container">
+        <img src="{{ selectedJob().company.logo }}" alt="comapny logo" />
+      </div>
+      <div class="company-info-container">
+        <div class="company-name-container">
+          <h2>{{ selectedJob().company.name }}</h2>
+        </div>
+        <div>
+          <p>
+            <strong>Employers:</strong> {{ selectedJob().company.employees }}
+          </p>
+          <p><strong>State:</strong> {{ selectedJob().company.state }}</p>
+          <p><strong>Website:</strong> {{ selectedJob().company.website }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="company-description">
+      <div class="company-description-heading">
+        <h2>About company</h2>
+      </div>
+      <div class="company-description-text">
+        <p>{{ selectedJob().company.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

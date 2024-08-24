@@ -1,6 +1,6 @@
 <div class="job-item">
   <div class="job-item-heading-container">
-    <h2>{{ job().company }}</h2>
+    <h2>{{ job().company.name }}</h2>
     <p>{{ job().position }}</p>
   </div>
   <div class="job-item-info-container">
@@ -20,6 +20,11 @@
       <p><strong>Country:</strong> {{ job().country }}</p>
       <p><strong>Qualifications:</strong> {{ job().qualifications }}</p>
       <p><strong>About:</strong> {{ job().description }}</p>
+      <app-button
+        text="Company Details"
+        [style]="{width: '150px',}"
+        (btnClick)="onCompanyButtonNavigateClick(job().id)"
+      ></app-button>
     </div>
   </div>
 </div>
