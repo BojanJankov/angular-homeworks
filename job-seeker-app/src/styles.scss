@@ -10,6 +10,7 @@ body {
 
 main {
   padding: 50px;
+  min-height: 800px;
 }
 
 .container {
@@ -18,6 +19,15 @@ main {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
   color: black;
   padding: 30px;
+}
+
+.applied-job-list-container {
+  background-color: whitesmoke;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
+  color: black;
+  padding: 30px;
+  margin-top: 110px;
 }
 
 .job-list-heading {
@@ -40,6 +50,7 @@ main {
 .job-item {
   height: max-content;
   background-color: #4361ee;
+  color: white;
   border-radius: 4px;
   padding: 30px 20px;
   display: flex;

@@ -23,7 +23,6 @@ import { FilterPipe } from '../../../../core/pipes/filter.pipe';
 export class JobListComponent {
   readonly filterValue = JobWorkTypeFilter;
   private jobsService = inject(JobsService);
-  // searchValue = signal<string>('');
   searchValue = model<string>('');
 
   jobs = computed<Job[]>(() => {

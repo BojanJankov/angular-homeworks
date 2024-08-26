@@ -1,41 +1,46 @@
-<div class="container">
-  <div class="job-list-heading">
-    @if(searchValue()){
-    <h3>Searched Jobs:</h3>
-    } @else {
-    <h3>Available Jobs:({{ jobs().length }})</h3>
-    }
-
-    <div>
-      <input
-        type="text"
-        placeholder="Enter your position..."
-        class="search-input"
-        [(ngModel)]="searchValue"
-      />
-    </div>
-    <div>
-      <app-button text="Salary" (btnClick)="onClickSort()"></app-button>
-      <app-button
-        text="Remote"
-        (btnClick)="onFilterButtonClick(filterValue.REMOTE)"
-      ></app-button>
-      <app-button
-        text="Onsite"
-        (btnClick)="onFilterButtonClick(filterValue.ONSITE)"
-      ></app-button>
-      <app-button
-        text="Hybrid"
-        (btnClick)="onFilterButtonClick(filterValue.HYBRID)"
-      ></app-button>
-      <app-button text="Reset" (btnClick)="onResetClick()"></app-button>
+<section class="filter-job-list-container">
+  <div class="container">
+    <div class="search-filters-container">
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Enter your position..."
+          class="search-input"
+          [(ngModel)]="searchValue"
+        />
+      </div>
+      <div class="filters-container">
+        <app-button text="Salary" (btnClick)="onClickSort()"></app-button>
+        <app-button
+          text="Remote"
+          (btnClick)="onFilterButtonClick(filterValue.REMOTE)"
+        ></app-button>
+        <app-button
+          text="Onsite"
+          (btnClick)="onFilterButtonClick(filterValue.ONSITE)"
+        ></app-button>
+        <app-button
+          text="Hybrid"
+          (btnClick)="onFilterButtonClick(filterValue.HYBRID)"
+        ></app-button>
+        <app-button text="Reset" (btnClick)="onResetClick()"></app-button>
+      </div>
     </div>
   </div>
-  <div class="job-list-container">
-    @for(job of jobs() | filter: searchValue(); track job.id){
-    <app-job-item [job]="job"></app-job-item>
-    } @empty {
-    <h4>No jobs found!</h4>
-    }
+  <div class="container">
+    <div class="job-list-heading">
+      @if(searchValue()){
+      <h3>Searched Jobs:</h3>
+      } @else {
+      <h3>Available Jobs:({{ jobs().length }})</h3>
+      }
+    </div>
+    <div class="job-list-container">
+      @for(job of jobs() | filter: searchValue(); track job.id){
+      <app-job-item [job]="job"></app-job-item>
+      } @empty {
+      <h4>No jobs found!</h4>
+      }
+    </div>
   </div>
-</div>
+</section>
