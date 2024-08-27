@@ -1,0 +1,33 @@
+.about-page {
+  min-height: 800px;
+  display: grid;
+  place-items: center;
+
+  h4 {
+    margin: 15px 0;
+    font-size: 24px;
+  }
+}
+
+.about-container {
+  background-color: #4361ee;
+  width: 1000px;
+  height: max-content;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 50px;
+  gap: 30px;
+}
+
+.about-heading {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  h2 {
+    font-size: 32px;
+    margin: 0;
+  }
+}
