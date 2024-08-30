@@ -5,6 +5,7 @@ import { NotFoundComponent } from './shared/components/not-found/not-found.compo
 import { ComapnyDetailsComponent } from './feature/jobs/components/comapny-details/comapny-details.component';
 import { ProfilePanelComponent } from './feature/auth/components/profile-panel/profile-panel.component';
 import { AboutComponent } from './feature/about/about.component';
+import { ContactComponent } from './feature/contact/contact.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,10 @@ export const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
   },
   {
     path: 'profile',

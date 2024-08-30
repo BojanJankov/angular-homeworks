@@ -2,11 +2,12 @@ import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { JobsService } from '../../../../core/services/jobs.service';
 import { Job } from '../../models/job.model';
 import { ApplyJobItemComponent } from '../apply-job-item/apply-job-item.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-apply-job-list',
   standalone: true,
-  imports: [ApplyJobItemComponent],
+  imports: [ApplyJobItemComponent, CommonModule],
   templateUrl: './apply-job-list.component.html',
   styleUrl: './apply-job-list.component.scss',
 })

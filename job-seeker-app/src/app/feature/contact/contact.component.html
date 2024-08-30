@@ -1,0 +1,84 @@
+<section class="contact-page">
+  <div class="contact-container">
+    <form
+      class="contact-form"
+      [formGroup]="contactForm"
+      (ngSubmit)="onFormSubmit()"
+    >
+      <h2>Send a message:</h2>
+      <div class="contact-form-row-container">
+        <div class="contact-form-input-div">
+          <label for="firstname">FirstName:</label>
+          <input type="text" id="firstname" formControlName="firstName" />
+          @if(contactForm.get("firstName")?.touched &&
+          contactForm.get("firstName")?.errors?.["required"]) {
+          <p class="error-message">First name is required!</p>
+          }
+        </div>
+        <div class="contact-form-input-div">
+          <label for="lastname">LastName:</label>
+          <input type="text" id="lastname" formControlName="lastName" />
+          @if(contactForm.get("lastName")?.touched &&
+          contactForm.get("lastName")?.errors?.["required"]) {
+          <p class="error-message">Last name is required!</p>
+          }
+        </div>
+      </div>
+      <div class="contact-form-row-container">
+        <div class="contact-form-input-div">
+          <label for="email">Email:</label>
+          <input type="text" id="email" formControlName="email" />
+          @if(contactForm.get("email").touched){
+          <p
+            class="error-message"
+            *ngIf="contactForm.get('email')?.errors?.['required']"
+          >
+            Email is required!
+          </p>
+          <p
+            class="error-message"
+            *ngIf="contactForm.get('email')?.errors?.['email']"
+          >
+            Enter valid email!
+          </p>
+          }
+        </div>
+        <div class="contact-form-input-div">
+          <label for="phoneNumber">Phone number:</label>
+          <input type="number" id="phoneNumber" formControlName="phoneNumber" />
+          @if(contactForm.get("phoneNumber")?.touched &&
+          !contactForm.controls.phoneNumber.value){
+          <p class="error-message">Enter valid phone number!</p>
+          }
+        </div>
+      </div>
+      <div class="contact-form-row-container">
+        <div class="contact-form-input-div">
+          <label for="message">Message:</label>
+          <textarea
+            formControlName="message"
+            name="contactMessage"
+            id="message"
+            cols="50"
+            rows="5"
+          ></textarea>
+          <small
+            >{{ contactForm.controls.message.value?.length }}/{{
+              maxContactMessageLenght
+            }}</small
+          >
+          @if(contactForm.get("message").touched &&
+          contactForm.get("message")?.errors?.['required']){
+          <p class="error-message">Message is required!</p>
+          }
+        </div>
+      </div>
+      <app-button
+        text="Send"
+        [type]="'submit'"
+        [style]="{ color: 'black' }"
+      ></app-button>
+    </form>
+    <div class="contact-media-info"></div>
+  </div>
+</section>

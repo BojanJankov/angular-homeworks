@@ -1,5 +1,12 @@
 <div class="job-item">
   <div class="job-item-heading-container">
+    <div class="job-item-heading-image-container">
+      <img
+        src="{{ appliedJob().company.logo }}"
+        alt="company logo"
+        height="100px"
+      />
+    </div>
     <h2>{{ appliedJob().company.name }}</h2>
     <p>{{ appliedJob().position }}</p>
   </div>

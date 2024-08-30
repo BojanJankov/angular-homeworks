@@ -1,4 +1,4 @@
-<div class="applied-job-list-container">
+<div class="applied-job-list-container" *ngIf="appliedJobs().length > 0">
   <h3>Applied jobs:({{ totalAppliedJobNumer() }})</h3>
   <div class="job-list-container">
     @for(job of appliedJobs(); track job.id){
