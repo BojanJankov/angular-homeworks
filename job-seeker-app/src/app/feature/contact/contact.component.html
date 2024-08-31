@@ -46,16 +46,13 @@
         <div class="contact-form-input-div">
           <label for="phoneNumber">Phone number:</label>
           <input type="number" id="phoneNumber" formControlName="phoneNumber" />
-          @if(contactForm.get("phoneNumber")?.touched &&
-          contactForm.get("phoneNumber").errors?.required){
-          <p class="error-message">Phone number is required!</p>
+          @if(contactForm.get("phoneNumber")?.touched){
           <p
             class="error-message"
-            *ngIf="contactForm.get('phoneNumber')?.errors?.pattern"
+            *ngIf="contactForm.get('phoneNumber').errors?.required"
           >
-            Enter valid phone number!
+            Phone number is required!
           </p>
-
           }
         </div>
       </div>
