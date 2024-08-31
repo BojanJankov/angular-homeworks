@@ -25,7 +25,7 @@ export class ContactComponent {
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      phoneNumber: new FormControl(0, [Validators.required, Validators.min(9)]),
+      phoneNumber: new FormControl<number>(null, [Validators.required]),
       message: new FormControl('', [
         Validators.required,
         Validators.max(this.maxContactMessageLenght),
@@ -34,6 +34,10 @@ export class ContactComponent {
   }
 
   onFormSubmit() {
+    this.contactForm.markAllAsTouched();
+
+    if (this.contactForm.invalid) return;
+
     console.log(this.contactForm.value);
 
     this.contactForm.reset();

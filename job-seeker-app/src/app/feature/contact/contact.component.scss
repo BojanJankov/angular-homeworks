@@ -9,16 +9,16 @@
   background-color: #4361ee;
   padding: 40px 20px;
   border-radius: 4px;
-  height: 400px;
+  height: 450px;
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 60% 40%;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 10px 40px;
+  padding: 10px;
 
   h2 {
     margin: 0;
@@ -37,6 +37,10 @@
     padding: 5px;
   }
 
+  input.ng-invalid.ng-touched {
+    border: 2px solid red;
+  }
+
   textarea {
     background-color: whitesmoke;
     border-radius: 5px;
@@ -44,6 +48,7 @@
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
     color: black;
     padding: 5px;
+    width: 101%;
   }
 }
 
@@ -61,4 +66,32 @@
 .error-message {
   color: darkred;
   font-size: 14px;
+}
+
+.contact-media-info {
+  border-left: 1px solid white;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+
+  h2 {
+    margin: 10px;
+  }
+}
+
+.contact-media-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.contact-media-container {
+  padding-left: 20px;
+  width: 200px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }

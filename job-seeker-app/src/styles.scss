@@ -19,7 +19,6 @@ main {
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
   color: black;
   padding: 20px;
-  width: 650px;
 }
 
 .applied-job-list-container {
@@ -58,7 +57,6 @@ main {
   flex-direction: column;
   gap: 20px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.2);
-  width: 600px;
 }
 
 .job-item-heading-container {
@@ -107,8 +105,4 @@ main {
     margin: 0;
     cursor: pointer;
   }
-}
-
-input.ng-invalid.ng-touched {
-  border: 2px solid darkred;
 }

@@ -11,7 +11,7 @@
           <label for="firstname">FirstName:</label>
           <input type="text" id="firstname" formControlName="firstName" />
           @if(contactForm.get("firstName")?.touched &&
-          contactForm.get("firstName")?.errors?.["required"]) {
+          contactForm.get("firstName")?.errors?.required) {
           <p class="error-message">First name is required!</p>
           }
         </div>
@@ -19,7 +19,7 @@
           <label for="lastname">LastName:</label>
           <input type="text" id="lastname" formControlName="lastName" />
           @if(contactForm.get("lastName")?.touched &&
-          contactForm.get("lastName")?.errors?.["required"]) {
+          contactForm.get("lastName")?.errors?.required) {
           <p class="error-message">Last name is required!</p>
           }
         </div>
@@ -31,13 +31,13 @@
           @if(contactForm.get("email").touched){
           <p
             class="error-message"
-            *ngIf="contactForm.get('email')?.errors?.['required']"
+            *ngIf="contactForm.get('email')?.errors?.required"
           >
             Email is required!
           </p>
           <p
             class="error-message"
-            *ngIf="contactForm.get('email')?.errors?.['email']"
+            *ngIf="contactForm.get('email')?.errors?.email"
           >
             Enter valid email!
           </p>
@@ -47,8 +47,15 @@
           <label for="phoneNumber">Phone number:</label>
           <input type="number" id="phoneNumber" formControlName="phoneNumber" />
           @if(contactForm.get("phoneNumber")?.touched &&
-          !contactForm.controls.phoneNumber.value){
-          <p class="error-message">Enter valid phone number!</p>
+          contactForm.get("phoneNumber").errors?.required){
+          <p class="error-message">Phone number is required!</p>
+          <p
+            class="error-message"
+            *ngIf="contactForm.get('phoneNumber')?.errors?.pattern"
+          >
+            Enter valid phone number!
+          </p>
+
           }
         </div>
       </div>
@@ -76,9 +83,30 @@
       <app-button
         text="Send"
         [type]="'submit'"
-        [style]="{ color: 'black' }"
+        [style]="{
+          color: 'black',
+          borderRadius: '5px'
+        }"
       ></app-button>
     </form>
-    <div class="contact-media-info"></div>
+    <div class="contact-media-info">
+      <div>
+        <h2>Contact info:</h2>
+      </div>
+      <div class="contact-media-info-container">
+        <div class="contact-media-container">
+          <span><i class="fa-solid fa-link"></i></span>
+          <strong>www.jobseeker.com</strong>
+        </div>
+        <div class="contact-media-container">
+          <span><i class="fa-solid fa-location-dot"></i></span>
+          <strong>11 Oktomvri 33a Skopje, Macedonia</strong>
+        </div>
+        <div class="contact-media-container">
+          <span><i class="fa-solid fa-phone"></i></span>
+          <strong>+389 72 123 456</strong>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
