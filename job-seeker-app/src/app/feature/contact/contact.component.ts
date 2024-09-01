@@ -25,7 +25,7 @@ export class ContactComponent {
       firstName: new FormControl('', Validators.required),
       lastName: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
-      phoneNumber: new FormControl<number>(null, [Validators.required]),
+      phoneNumber: new FormControl<number>(null, Validators.required),
       message: new FormControl('', [
         Validators.required,
         Validators.max(this.maxContactMessageLenght),
