@@ -6,6 +6,14 @@
   h2 {
     color: white;
   }
+
+  p {
+    margin: 0;
+  }
+
+  small {
+    color: white;
+  }
 }
 
 .job-form-position {
@@ -24,6 +32,11 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+
+  label {
+    font-size: 18px;
+    color: white;
+  }
 
   input {
     background-color: whitesmoke;

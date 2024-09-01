@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, effect, input, output } from '@angular/core';
+import { Component, effect, input, output, signal } from '@angular/core';
 import {
+  Form,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
@@ -22,6 +23,8 @@ export class JobFormComponent {
   editFormData = input<Job>();
   submitOutput = output<JobFormModel>();
 
+  textAreaMaxLength = 500;
+
   getJobForm() {
     return new FormGroup({
       expires: new FormControl('', Validators.required),
@@ -30,12 +33,21 @@ export class JobFormComponent {
       workType: new FormControl(null, Validators.required),
       location: new FormControl('', Validators.required),
       country: new FormControl('', Validators.required),
-      qualifications: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required),
-      logo: new FormControl('', Validators.required),
+      qualifications: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(this.textAreaMaxLength),
+      ]),
+      description: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(this.textAreaMaxLength),
+      ]),
+      logo: new FormControl('', [Validators.required, this.urlValidator]),
       name: new FormControl('', Validators.required),
       employees: new FormControl('', Validators.required),
-      companyDescription: new FormControl('', Validators.required),
+      companyDescription: new FormControl('', [
+        Validators.required,
+        Validators.maxLength(this.textAreaMaxLength),
+      ]),
       state: new FormControl('', Validators.required),
       website: new FormControl('', Validators.required),
     });
@@ -76,5 +88,12 @@ export class JobFormComponent {
     console.log(this.jobForm.value);
 
     this.submitOutput.emit(this.jobForm.value as JobFormModel);
+  }
+
+  urlValidator(control: FormControl): { [key: string]: boolean } | null {
+    if (!control.value.startsWith('http')) {
+      return { validUrl: true };
+    }
+    return null;
   }
 }
