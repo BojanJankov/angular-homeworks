@@ -23,6 +23,10 @@
   small {
     font-size: 15px;
     cursor: pointer;
+
+    &:hover {
+      color: #00b4d8;
+    }
   }
 }
 
@@ -46,7 +50,7 @@
         font-size: 14px;
 
         &:hover {
-          color: slategray;
+          color: #00b4d8;
         }
       }
     }

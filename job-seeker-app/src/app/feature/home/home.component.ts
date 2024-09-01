@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

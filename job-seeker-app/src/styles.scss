@@ -96,6 +96,8 @@ main {
 
   &:hover {
     border: 1px solid black;
+    transform: translate(1px, -1px);
+    transition: 0.3s ease-in-out;
   }
 }
 
