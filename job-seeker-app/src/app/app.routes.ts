@@ -6,6 +6,8 @@ import { ComapnyDetailsComponent } from './feature/jobs/components/comapny-detai
 import { ProfilePanelComponent } from './feature/auth/components/profile-panel/profile-panel.component';
 import { AboutComponent } from './feature/about/about.component';
 import { ContactComponent } from './feature/contact/contact.component';
+import { AddJobComponent } from './feature/jobs/components/add-job/add-job.component';
+import { EditJobComponent } from './feature/jobs/components/edit-job/edit-job.component';
 
 export const routes: Routes = [
   {
@@ -15,6 +17,14 @@ export const routes: Routes = [
   {
     path: 'jobs',
     component: JobPageComponent,
+  },
+  {
+    path: 'add-job',
+    component: AddJobComponent,
+  },
+  {
+    path: 'edit/:id',
+    component: EditJobComponent,
   },
   {
     path: 'about',

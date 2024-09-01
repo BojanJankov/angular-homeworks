@@ -50,6 +50,10 @@
     padding: 5px;
     width: 101%;
   }
+
+  textarea.ng-invalid.ng-touched {
+    border: 2px solid red;
+  }
 }
 
 .contact-form-row-container {

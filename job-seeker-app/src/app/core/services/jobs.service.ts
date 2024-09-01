@@ -66,6 +66,10 @@ export class JobsService {
     this.jobs.set(copyJobArray);
   }
 
+  addJob(job: Job) {
+    this.jobs.update((prev) => [...prev, job]);
+  }
+
   resetFilter() {
     this.jobs.set(jobsMock);
   }

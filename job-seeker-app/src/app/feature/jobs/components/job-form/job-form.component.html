@@ -1,0 +1,147 @@
+<form class="job-form" [formGroup]="jobForm" (ngSubmit)="onSubmitForm()">
+  <div class="job-form-position">
+    <div>
+      <h2>Job informations:</h2>
+    </div>
+    <div class="form-group">
+      <label for="job-position">Position:</label>
+      <input type="text" id="job-position" formControlName="position" />
+      @if(jobForm.get('position').touched &&
+      jobForm.get('position').errors?.required){
+      <p class="error-message">Position is required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="job-company">Company name:</label>
+      <input type="text" id="job-company" formControlName="name" />
+      @if(jobForm.get('name').touched && jobForm.get('name').errors?.required){
+      <p class="error-message">Company name is required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="job-work-type">Work type:</label>
+      <select id="job-work-type" formControlName="workType">
+        <option value="deafult" [defaultSelected]="true" [disabled]="true">
+          Select type
+        </option>
+        <option value="onsite">Onsite</option>
+        <option value="remote">Remote</option>
+        <option value="hybrid">Hybrid</option>
+      </select>
+      @if(jobForm.get('workType').touched &&
+      jobForm.get('workType').errors?.required){
+      <p class="error-message">Work type is required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="job-salary">Job salary:</label>
+      <input type="number" id="job-salary" formControlName="startingSalary" />
+      @if(jobForm.get('startingSalary').touched &&
+      jobForm.get('startingSalary').errors?.required){
+      <p class="error-message">Salary is required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="job-date">Expires date:</label>
+      <input type="date" id="job-date" formControlName="expires" />
+      @if(jobForm.get('expires').touched &&
+      jobForm.get('expires').errors?.required){
+      <p class="error-message">Date is required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="job-location">Location:</label>
+      <input type="text" id="job-location" formControlName="location" />
+      @if(jobForm.get('location').touched &&
+      jobForm.get('location').errors?.required){
+      <p class="error-message">Location is required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="job-country">Country:</label>
+      <input type="text" id="job-country" formControlName="country" />
+      @if(jobForm.get('country').touched &&
+      jobForm.get('country').errors?.required){
+      <p class="error-message">Country is required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="job-qualifications">Job qualifications:</label>
+      <textarea
+        id="job-qualifications"
+        cols="50"
+        rows="5"
+        formControlName="qualifications"
+      ></textarea>
+      @if(jobForm.get('qualifications').touched &&
+      jobForm.get('qualifications').errors?.required){
+      <p class="error-message">Qualifications are required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="job-description">About job:</label>
+      <textarea
+        id="job-description"
+        cols="50"
+        rows="5"
+        formControlName="description"
+      ></textarea>
+      @if(jobForm.get('description').touched &&
+      jobForm.get('description').errors?.required){
+      <p class="error-message">Description about job is required!</p>
+      }
+    </div>
+  </div>
+  <div class="job-form-company">
+    <div>
+      <h2>Company informations:</h2>
+    </div>
+    <div class="form-group">
+      <label for="company-logo">Company logo:</label>
+      <input type="text" id="company-logo" formControlName="logo" />
+      @if(jobForm.get('logo').touched && jobForm.get('logo').errors?.required){
+      <p class="error-message">Logo is required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="company-employees">Company employees:</label>
+      <input type="number" id="company-employees" formControlName="employees" />
+      @if(jobForm.get('employees').touched &&
+      jobForm.get('employees').errors?.required){
+      <p class="error-message">Employees is required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="company-state">Company state:</label>
+      <input type="text" id="company-state" formControlName="state" />
+      @if(jobForm.get('state').touched &&
+      jobForm.get('state').errors?.required){
+      <p class="error-message">State is required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="company-website">Company website:</label>
+      <input type="text" id="company-website" formControlName="website" />
+      @if(jobForm.get('website').touched &&
+      jobForm.get('website').errors?.required){
+      <p class="error-message">Website is required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <label for="company-description">About company:</label>
+      <textarea
+        id="company-description"
+        cols="50"
+        rows="5"
+        formControlName="companyDescription"
+      ></textarea>
+      @if(jobForm.get('companyDescription').touched &&
+      jobForm.get('companyDescription').errors?.required){
+      <p class="error-message">About company is required!</p>
+      }
+    </div>
+    <div class="form-group">
+      <button type="submit">Submit</button>
+    </div>
+  </div>
+</form>

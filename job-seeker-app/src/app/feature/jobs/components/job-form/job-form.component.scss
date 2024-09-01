@@ -1,0 +1,73 @@
+.job-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+
+  h2 {
+    color: white;
+  }
+}
+
+.job-form-position {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.job-form-company {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  input {
+    background-color: whitesmoke;
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
+    color: black;
+    padding: 5px;
+  }
+
+  input.ng-invalid.ng-touched {
+    border: 2px solid red;
+  }
+
+  select {
+    background-color: whitesmoke;
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
+    color: black;
+    padding: 5px;
+  }
+
+  select.ng-invalid.ng-touched {
+    border: 2px solid red;
+  }
+
+  textarea {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border: 0.5px solid lightgray;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
+    color: black;
+    padding: 5px;
+    width: 98%;
+  }
+
+  textarea.ng-invalid.ng-touched {
+    border: 2px solid red;
+  }
+}
+
+.error-message {
+  margin: 0;
+  font-size: 14px;
+  color: red;
+}

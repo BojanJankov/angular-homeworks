@@ -7,7 +7,7 @@ export const jobsMock: Job[] = [
       logo: 'https://media.licdn.com/dms/image/C510BAQGyrjejcc1lAg/company-logo_200_200/0/1630614328507?e=2147483647&v=beta&t=OpkdaFKq2JjzyqxZdzryHedaKduCYj9UMRAyYNautvc',
       name: 'Tech Innovators Inc.',
       employees: '150',
-      description:
+      companyDescription:
         'A leading company in tech innovations, focusing on cutting-edge solutions for the future.',
       state: 'San Francisco',
       website: 'https://techinnovators.com',
@@ -30,7 +30,7 @@ export const jobsMock: Job[] = [
       logo: 'https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/ghkyc0ruelu0pe8yndeq',
       name: 'GreenTech Solutions',
       employees: '300',
-      description:
+      companyDescription:
         'Pioneering sustainable technology solutions for a greener future.',
       state: 'California',
       website: 'https://greentechsolutions.com',
@@ -53,7 +53,7 @@ export const jobsMock: Job[] = [
       logo: 'https://www.snapswap.eu/uploads/1/2/6/3/12630235/button-fintech-100_orig.png',
       name: 'FinTech Dynamics',
       employees: '500',
-      description:
+      companyDescription:
         'Innovating financial solutions with cutting-edge technology to empower businesses and individuals.',
       state: 'New York',
       website: 'https://fintechdynamics.com',
@@ -76,7 +76,7 @@ export const jobsMock: Job[] = [
       logo: 'https://www.ifhafund.com/wp-content/uploads/2019/10/aar-hc-logo.png',
       name: 'HealthCare Plus',
       employees: '200',
-      description:
+      companyDescription:
         'Providing advanced healthcare solutions and services with a focus on patient care and technology.',
       state: 'Massachusetts',
       website: 'https://healthcareplus.com',
@@ -99,7 +99,7 @@ export const jobsMock: Job[] = [
       logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpKgAECRdqB81uLjOfk-6l69Jsx8wDn3WLgg&s',
       name: 'Design Studios',
       employees: '50',
-      description:
+      companyDescription:
         'Creative design agency specializing in innovative solutions for digital and print media.',
       state: 'California',
       website: 'https://designstudios.com',
@@ -122,7 +122,7 @@ export const jobsMock: Job[] = [
       logo: 'https://media.licdn.com/dms/image/C4D0BAQHnq_V7gHkyCQ/company-logo_200_200/0/1630569065309?e=2147483647&v=beta&t=0ni4p7pGUP4_GxCoxBIdoCCNwS5L9udsH9Ds171Jjqk',
       name: 'Logistics Pro',
       employees: '400',
-      description:
+      companyDescription:
         'Optimizing logistics and supply chain operations with advanced technology and expert solutions.',
       state: 'Remote',
       website: 'https://logisticspro.com',
@@ -145,7 +145,7 @@ export const jobsMock: Job[] = [
       logo: 'https://company.overdrive.com/wp-content/uploads/2024/07/logo.png',
       name: 'EduTech Corp.',
       employees: '120',
-      description:
+      companyDescription:
         'Innovating education with technology to create engaging and effective learning experiences.',
       state: 'Illinois',
       website: 'https://edutechcorp.com',
@@ -168,7 +168,7 @@ export const jobsMock: Job[] = [
       logo: 'https://seeklogo.com/images/M/my-travel-expert-logo-034DDA02DD-seeklogo.com.gif',
       name: 'Travel Experts',
       employees: '80',
-      description:
+      companyDescription:
         'Providing exceptional travel experiences with personalized services and expert advice.',
       state: 'Florida',
       website: 'https://travelexperts.com',
@@ -191,7 +191,7 @@ export const jobsMock: Job[] = [
       logo: 'https://cerc.howard.edu/wp-content/uploads/2024/07/Cybersecurity-logo.png',
       name: 'CyberSecure Inc.',
       employees: '250',
-      description:
+      companyDescription:
         'Leading the way in cybersecurity with innovative solutions to protect data and systems.',
       state: 'Remote',
       website: 'https://cybersecureinc.com',
@@ -214,7 +214,7 @@ export const jobsMock: Job[] = [
       logo: 'https://i0.wp.com/elitejobstoday.com/wp-content/uploads/2020/06/Nation-Media-Group.jpg?w=618&ssl=1',
       name: 'Media House',
       employees: '180',
-      description:
+      companyDescription:
         'Creating and distributing compelling media content across various platforms.',
       state: 'Washington',
       website: 'https://mediahouse.com',
@@ -237,7 +237,7 @@ export const jobsMock: Job[] = [
       logo: 'https://smarthomesolutionsuae.com/wp-content/uploads/2024/04/SMART-HOME-LOGO-160x160.png',
       name: 'Smart Home Solutions',
       employees: '90',
-      description:
+      companyDescription:
         'Transforming homes with smart technology for improved convenience and efficiency.',
       state: 'Texas',
       website: 'https://smarthomesolutions.com',
@@ -260,7 +260,7 @@ export const jobsMock: Job[] = [
       logo: 'https://www.keepme.ai/assets/testimonials/plus-fitness.png',
       name: 'Fitness Innovators',
       employees: '60',
-      description:
+      companyDescription:
         'Revolutionizing fitness with state-of-the-art equipment and personalized training solutions.',
       state: 'Colorado',
       website: 'https://fitnessinnovators.com',
@@ -283,7 +283,7 @@ export const jobsMock: Job[] = [
       logo: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/112017/untitled-6_33.png?ytSHXxFx1NduIqXcPHGv6HNPvsoYLYZh&itok=JGi4eZah',
       name: 'Retail Vision',
       employees: '500',
-      description:
+      companyDescription:
         'Enhancing the retail experience with innovative technology and exceptional service.',
       state: 'Philadelphia',
       website: 'https://retailvision.com',
