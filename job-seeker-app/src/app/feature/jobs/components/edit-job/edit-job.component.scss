@@ -1,0 +1,25 @@
+.edit-job-page {
+  display: grid;
+  place-items: center;
+}
+
+.edit-job-form-container {
+  background-color: #4361ee;
+  width: 1000px;
+  padding: 20px 40px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-job-form-heading-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  h2 {
+    margin: 10px;
+    font-size: 30px;
+    color: white;
+  }
+}

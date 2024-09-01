@@ -70,6 +70,18 @@ export class JobsService {
     this.jobs.update((prev) => [...prev, job]);
   }
 
+  editJob(editedJob: Job) {
+    this.jobs.update((prev) =>
+      prev.map((job) => {
+        if (job.id === editedJob.id) {
+          return { ...editedJob };
+        } else {
+          return job;
+        }
+      })
+    );
+  }
+
   resetFilter() {
     this.jobs.set(jobsMock);
   }

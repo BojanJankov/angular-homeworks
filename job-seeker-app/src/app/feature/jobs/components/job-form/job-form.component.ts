@@ -1,23 +1,25 @@
 import { CommonModule } from '@angular/common';
-import { Component, output } from '@angular/core';
+import { Component, effect, input, output } from '@angular/core';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { JobFormModel } from '../../models/job.model';
+import { Job, JobFormModel } from '../../models/job.model';
+import { ButtonComponent } from '../../../../shared/components/button/button.component';
 
 @Component({
   selector: 'app-job-form',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, ButtonComponent],
   templateUrl: './job-form.component.html',
   styleUrl: './job-form.component.scss',
 })
 export class JobFormComponent {
   jobForm = this.getJobForm();
 
+  editFormData = input<Job>();
   submitOutput = output<JobFormModel>();
 
   getJobForm() {
@@ -36,6 +38,33 @@ export class JobFormComponent {
       companyDescription: new FormControl('', Validators.required),
       state: new FormControl('', Validators.required),
       website: new FormControl('', Validators.required),
+    });
+  }
+
+  constructor() {
+    effect(() => {
+      if (this.editFormData()) {
+        this.populateFormData(this.editFormData());
+      }
+    });
+  }
+
+  populateFormData(editJob: Job) {
+    this.jobForm.setValue({
+      position: editJob.position,
+      expires: editJob.expires,
+      startingSalary: editJob.startingSalary,
+      workType: editJob.workType,
+      location: editJob.location,
+      country: editJob.country,
+      qualifications: editJob.qualifications,
+      description: editJob.description,
+      logo: editJob.company.logo,
+      name: editJob.company.name,
+      employees: editJob.company.employees,
+      companyDescription: editJob.company.companyDescription,
+      state: editJob.company.state,
+      website: editJob.company.website,
     });
   }
 

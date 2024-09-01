@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { JobFormComponent } from '../job-form/job-form.component';
 import { Job, JobFormModel } from '../../models/job.model';
 import { JobsService } from '../../../../core/services/jobs.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-job',
@@ -11,6 +12,7 @@ import { JobsService } from '../../../../core/services/jobs.service';
   styleUrl: './add-job.component.scss',
 })
 export class AddJobComponent {
+  private router = inject(Router);
   private jobsService = inject(JobsService);
 
   onAddJob(formJob: JobFormModel) {
@@ -36,5 +38,7 @@ export class AddJobComponent {
     };
 
     this.jobsService.addJob(newJob);
+
+    this.router.navigate(['jobs']);
   }
 }

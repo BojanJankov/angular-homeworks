@@ -1,1 +1,11 @@
-<p>edit-job works!</p>
+<section class="edit-job-page">
+  <div class="edit-job-form-container">
+    <div class="edit-job-form-heading-container">
+      <h2>Edit job</h2>
+    </div>
+    <app-job-form
+      [editFormData]="selectedJob()"
+      (submitOutput)="onEditForm($event)"
+    ></app-job-form>
+  </div>
+</section>

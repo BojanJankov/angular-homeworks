@@ -23,11 +23,17 @@
       <p><strong>Country:</strong> {{ job().country }}</p>
       <p><strong>Qualifications:</strong> {{ job().qualifications }}</p>
       <p><strong>About:</strong> {{ job().description }}</p>
-      <app-button
-        text="Company Details"
-        [style]="{width: '150px',}"
-        (btnClick)="onCompanyButtonNavigateClick(job().id)"
-      ></app-button>
+      <div class="more-details-controls">
+        <app-button
+          text="Company Details"
+          [style]="{width: '150px',}"
+          (btnClick)="onCompanyButtonNavigateClick(job().id)"
+        ></app-button>
+        <app-button
+          text="Edit job"
+          (btnClick)="onEditNavigate(job().id)"
+        ></app-button>
+      </div>
     </div>
   </div>
 </div>

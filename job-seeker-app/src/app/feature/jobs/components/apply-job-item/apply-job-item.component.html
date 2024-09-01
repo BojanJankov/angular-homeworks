@@ -30,11 +30,13 @@
       <p><strong>Country:</strong> {{ appliedJob().country }}</p>
       <p><strong>Qualifications:</strong> {{ appliedJob().qualifications }}</p>
       <p><strong>About:</strong> {{ appliedJob().description }}</p>
-      <app-button
-        text="Company Details"
-        [style]="{width: '150px',}"
-        (btnClick)="onCompanyButtonNavigateClick(appliedJob().id)"
-      ></app-button>
+      <div class="more-details-controls">
+        <app-button
+          text="Company Details"
+          [style]="{width: '150px',}"
+          (btnClick)="onCompanyButtonNavigateClick(appliedJob().id)"
+        ></app-button>
+      </div>
     </div>
   </div>
 </div>

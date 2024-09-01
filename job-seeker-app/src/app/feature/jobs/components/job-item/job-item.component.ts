@@ -25,4 +25,8 @@ export class JobItemComponent {
   onCompanyButtonNavigateClick(id: number) {
     this.router.navigate(['company', id]);
   }
+
+  onEditNavigate(id: number) {
+    this.router.navigate(['edit', id]);
+  }
 }
