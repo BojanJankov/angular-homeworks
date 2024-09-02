@@ -29,7 +29,10 @@ export class JobFormComponent {
     return new FormGroup({
       expires: new FormControl('', Validators.required),
       position: new FormControl('', Validators.required),
-      startingSalary: new FormControl<number>(null, Validators.required),
+      startingSalary: new FormControl<number>(null, [
+        Validators.required,
+        Validators.min(0),
+      ]),
       workType: new FormControl(null, Validators.required),
       location: new FormControl('', Validators.required),
       country: new FormControl('', Validators.required),

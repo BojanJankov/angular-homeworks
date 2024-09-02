@@ -36,9 +36,19 @@
     <div class="form-group">
       <label for="job-salary">Job salary:</label>
       <input type="number" id="job-salary" formControlName="startingSalary" />
-      @if(jobForm.get('startingSalary').touched &&
-      jobForm.get('startingSalary').errors?.required){
-      <p class="error-message">Salary is required!</p>
+      @if(jobForm.get('startingSalary').touched){
+      <p
+        class="error-message"
+        *ngIf="jobForm.get('startingSalary').errors?.required"
+      >
+        Salary is required!
+      </p>
+      <p
+        class="error-message"
+        *ngIf="jobForm.get('startingSalary').errors?.min"
+      >
+        Salary must be a grater than 0!
+      </p>
       }
     </div>
     <div class="form-group">
