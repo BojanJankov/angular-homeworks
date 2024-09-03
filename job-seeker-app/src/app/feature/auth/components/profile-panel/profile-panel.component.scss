@@ -7,7 +7,7 @@
 .profile-panel {
   padding: 40px;
   background-color: #4361ee;
-  width: 850px;
+  width: 1000px;
   min-height: 500px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -31,8 +31,33 @@
   gap: 20px;
 }
 
-.profile-panel-infomations {
-  min-height: 450px;
+.profile-panel-infomations-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-panel-infomations-nav {
+  background-color: white;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+
+  h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+}
+
+.profile-panel-nav-container {
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.profile-panel-informations {
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -57,6 +82,7 @@
 
 .info-row-data-div {
   background-color: whitesmoke;
+  min-height: 20px;
   width: 230px;
   border-radius: 5px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);

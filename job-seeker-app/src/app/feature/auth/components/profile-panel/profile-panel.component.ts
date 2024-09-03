@@ -13,4 +13,14 @@ import { CommonModule } from '@angular/common';
 })
 export class ProfilePanelComponent {
   user = signal<User>(userMock);
+
+  isAuthInfoShown = signal(false);
+
+  onUserInfoClick() {
+    this.isAuthInfoShown.set(true);
+  }
+
+  onPersonalInfoClick() {
+    this.isAuthInfoShown.set(false);
+  }
 }

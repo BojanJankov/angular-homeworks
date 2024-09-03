@@ -15,9 +15,19 @@
         <app-button text="Save" [style]="{ borderRadius: '5px' }"></app-button>
       </div>
     </div>
-    <div>
-      <div class="profile-panel-infomations">
-        <h2>User information:</h2>
+    <div class="profile-panel-infomations-container">
+      <div class="profile-panel-infomations-nav">
+        <div
+          class="profile-panel-nav-container"
+          (click)="onPersonalInfoClick()"
+        >
+          <h2>Personal information</h2>
+        </div>
+        <div class="profile-panel-nav-container" (click)="onUserInfoClick()">
+          <h2>Account information</h2>
+        </div>
+      </div>
+      <div class="profile-panel-informations" *ngIf="!isAuthInfoShown()">
         <div class="profile-panel-info-row">
           <strong>Name:</strong>
           <div class="info-row-data-div">
@@ -31,10 +41,6 @@
           </div>
         </div>
         <div class="profile-panel-info-row">
-          <strong>Email:</strong>
-          <div class="info-row-data-div">{{ user().email }}</div>
-        </div>
-        <div class="profile-panel-info-row">
           <strong>Gender:</strong>
           <div class="info-row-data-div">{{ user().gender }}</div>
         </div>
@@ -45,6 +51,20 @@
         <div class="profile-panel-info-row">
           <strong>Education:</strong>
           <div class="info-row-data-div">{{ user().education }}</div>
+        </div>
+      </div>
+      <div class="profile-panel-informations" *ngIf="isAuthInfoShown()">
+        <div class="profile-panel-info-row">
+          <strong>Email:</strong>
+          <div class="info-row-data-div">{{ user().email }}</div>
+        </div>
+        <div class="profile-panel-info-row">
+          <strong>Password:</strong>
+          <div class="info-row-data-div">123456789</div>
+        </div>
+        <div class="profile-panel-info-row">
+          <strong>Change password:</strong>
+          <div class="info-row-data-div"></div>
         </div>
       </div>
       <div class="profile-panel-controls-container">
