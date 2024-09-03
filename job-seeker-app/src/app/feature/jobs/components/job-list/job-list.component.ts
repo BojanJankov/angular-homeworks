@@ -1,4 +1,11 @@
-import { Component, computed, inject, model, signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  inject,
+  input,
+  model,
+  signal,
+} from '@angular/core';
 import { JobsService } from '../../../../core/services/jobs.service';
 import { Job, JobWorkTypeFilter } from '../../models/job.model';
 import { JobItemComponent } from '../job-item/job-item.component';
@@ -23,21 +30,9 @@ import { FilterPipe } from '../../../../core/pipes/filter.pipe';
 export class JobListComponent {
   readonly filterValue = JobWorkTypeFilter;
   private jobsService = inject(JobsService);
-  searchValue = model<string>('');
+  searchValue = input<string>();
 
   jobs = computed<Job[]>(() => {
-    return this.jobsService.jobs().filter((job) => !job.isApplied);
+    return this.jobsService.filteredJobs().filter((job) => !job.isApplied);
   });
-
-  onClickSort() {
-    this.jobsService.sortBySalary();
-  }
-
-  onFilterButtonClick(value: string) {
-    this.jobsService.sortByWork(value);
-  }
-
-  onResetClick() {
-    this.jobsService.resetFilter();
-  }
 }

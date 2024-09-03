@@ -8,7 +8,7 @@
       <h2>Send a message:</h2>
       <div class="contact-form-row-container">
         <div class="contact-form-input-div">
-          <label for="firstname">FirstName:</label>
+          <label for="firstname">First name:</label>
           <input type="text" id="firstname" formControlName="firstName" />
           @if(contactForm.get("firstName")?.touched &&
           contactForm.get("firstName")?.errors?.required) {
@@ -16,7 +16,7 @@
           }
         </div>
         <div class="contact-form-input-div">
-          <label for="lastname">LastName:</label>
+          <label for="lastname">Last name:</label>
           <input type="text" id="lastname" formControlName="lastName" />
           @if(contactForm.get("lastName")?.touched &&
           contactForm.get("lastName")?.errors?.required) {

@@ -2,7 +2,7 @@ import { Job } from './models/job.model';
 
 export const jobsMock: Job[] = [
   {
-    id: 1,
+    id: '6b6198d2-61df-4302-8e03-b2470fdc8fde',
     company: {
       logo: 'https://media.licdn.com/dms/image/C510BAQGyrjejcc1lAg/company-logo_200_200/0/1630614328507?e=2147483647&v=beta&t=OpkdaFKq2JjzyqxZdzryHedaKduCYj9UMRAyYNautvc',
       name: 'Tech Innovators Inc.',
@@ -25,7 +25,7 @@ export const jobsMock: Job[] = [
     isApplied: false,
   },
   {
-    id: 2,
+    id: '7f1bf1a4-b2df-4f45-ad22-8d1b8e01ee53',
     company: {
       logo: 'https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/ghkyc0ruelu0pe8yndeq',
       name: 'GreenTech Solutions',
@@ -48,7 +48,7 @@ export const jobsMock: Job[] = [
     isApplied: false,
   },
   {
-    id: 3,
+    id: '6442eb4e-d9d7-4cee-84c4-b4a2e5f5c96c',
     company: {
       logo: 'https://www.snapswap.eu/uploads/1/2/6/3/12630235/button-fintech-100_orig.png',
       name: 'FinTech Dynamics',
@@ -71,7 +71,7 @@ export const jobsMock: Job[] = [
     isApplied: false,
   },
   {
-    id: 4,
+    id: '866aacc7-64c6-40bb-b679-3c07d4e0d70f',
     company: {
       logo: 'https://www.ifhafund.com/wp-content/uploads/2019/10/aar-hc-logo.png',
       name: 'HealthCare Plus',
@@ -94,7 +94,7 @@ export const jobsMock: Job[] = [
     isApplied: false,
   },
   {
-    id: 5,
+    id: '0aa98688-7d27-4bf4-908d-ef405cca03d4',
     company: {
       logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpKgAECRdqB81uLjOfk-6l69Jsx8wDn3WLgg&s',
       name: 'Design Studios',
@@ -117,7 +117,7 @@ export const jobsMock: Job[] = [
     isApplied: false,
   },
   {
-    id: 6,
+    id: '43537093-ac1c-4c3b-b3d5-e7205820ecc2',
     company: {
       logo: 'https://media.licdn.com/dms/image/C4D0BAQHnq_V7gHkyCQ/company-logo_200_200/0/1630569065309?e=2147483647&v=beta&t=0ni4p7pGUP4_GxCoxBIdoCCNwS5L9udsH9Ds171Jjqk',
       name: 'Logistics Pro',
@@ -140,7 +140,7 @@ export const jobsMock: Job[] = [
     isApplied: false,
   },
   {
-    id: 7,
+    id: '482ce2b9-e317-43fd-899e-cc73d20ebce3',
     company: {
       logo: 'https://company.overdrive.com/wp-content/uploads/2024/07/logo.png',
       name: 'EduTech Corp.',
@@ -163,7 +163,7 @@ export const jobsMock: Job[] = [
     isApplied: false,
   },
   {
-    id: 8,
+    id: 'f78ea135-7c4e-48ed-99f7-5276a7252f41',
     company: {
       logo: 'https://seeklogo.com/images/M/my-travel-expert-logo-034DDA02DD-seeklogo.com.gif',
       name: 'Travel Experts',
@@ -186,7 +186,7 @@ export const jobsMock: Job[] = [
     isApplied: false,
   },
   {
-    id: 9,
+    id: 'caa7ef9f-fce7-496d-97c9-b51ba09383cc',
     company: {
       logo: 'https://cerc.howard.edu/wp-content/uploads/2024/07/Cybersecurity-logo.png',
       name: 'CyberSecure Inc.',
@@ -209,7 +209,7 @@ export const jobsMock: Job[] = [
     isApplied: false,
   },
   {
-    id: 10,
+    id: 'bbe056fa-3469-49f3-abb0-a49c3b253638',
     company: {
       logo: 'https://i0.wp.com/elitejobstoday.com/wp-content/uploads/2020/06/Nation-Media-Group.jpg?w=618&ssl=1',
       name: 'Media House',
@@ -232,7 +232,7 @@ export const jobsMock: Job[] = [
     isApplied: false,
   },
   {
-    id: 11,
+    id: 'c68aa93a-0e40-493e-855a-8688c526aa46',
     company: {
       logo: 'https://smarthomesolutionsuae.com/wp-content/uploads/2024/04/SMART-HOME-LOGO-160x160.png',
       name: 'Smart Home Solutions',
@@ -255,7 +255,7 @@ export const jobsMock: Job[] = [
     isApplied: false,
   },
   {
-    id: 12,
+    id: '6b661e18-4237-4872-9136-777be5b2a7fc',
     company: {
       logo: 'https://www.keepme.ai/assets/testimonials/plus-fitness.png',
       name: 'Fitness Innovators',
@@ -278,7 +278,7 @@ export const jobsMock: Job[] = [
     isApplied: false,
   },
   {
-    id: 13,
+    id: 'a698b7d2-3990-45d2-b445-57848cf61baf',
     company: {
       logo: 'https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/112017/untitled-6_33.png?ytSHXxFx1NduIqXcPHGv6HNPvsoYLYZh&itok=JGi4eZah',
       name: 'Retail Vision',

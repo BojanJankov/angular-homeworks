@@ -17,7 +17,7 @@ export class ComapnyDetailsComponent implements OnInit {
   selectedJob = signal<Job>(null);
   ngOnInit(): void {
     this.paramId = this.route.snapshot.params['id'];
-    this.selectedJob.set(this.jobService.getJobById(Number(this.paramId)));
+    this.selectedJob.set(this.jobService.getJobById(this.paramId));
     console.log(this.selectedJob());
   }
 }

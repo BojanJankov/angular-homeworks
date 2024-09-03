@@ -9,13 +9,15 @@ import { Router } from '@angular/router';
 export class JobsService {
   private router = inject(Router);
   jobs = signal<Job[]>(jobsMock);
-  appliedJobs = signal<Job[]>([]);
-
-  totalAppliedJobs = computed<number>(() => {
-    return this.appliedJobs().length;
+  filteredJobs = computed<Job[]>(() => {
+    return this.jobs();
   });
 
-  getJobById(id: number) {
+  totalAppliedJobs = computed<number>(() => {
+    return this.jobs().filter((job) => job.isApplied).length;
+  });
+
+  getJobById(id: string) {
     const foundJob = this.jobs().find((job) => job.id === id);
 
     if (!foundJob) this.router.navigate(['not-found']);
@@ -23,7 +25,7 @@ export class JobsService {
     return foundJob;
   }
 
-  onApplyJob(id: number) {
+  onApplyJob(id: string) {
     this.jobs.update((prev) =>
       prev.map((job) => {
         if (job.id === id) {
@@ -34,10 +36,9 @@ export class JobsService {
         }
       })
     );
-    this.appliedJobs.set(this.jobs().filter((job) => job.isApplied));
   }
 
-  onCancelJob(id: number) {
+  onCancelJob(id: string) {
     this.jobs.update((prev) =>
       prev.map((job) => {
         if (job.id === id) {
@@ -48,8 +49,6 @@ export class JobsService {
         }
       })
     );
-
-    this.appliedJobs.set(this.jobs().filter((job) => job.isApplied));
   }
 
   sortBySalary() {

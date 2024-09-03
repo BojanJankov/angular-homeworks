@@ -18,15 +18,15 @@ export class JobItemComponent {
   private router = inject(Router);
   job = input<Job>();
 
-  onApplyClick(id: number) {
+  onApplyClick(id: string) {
     this.jobsService.onApplyJob(id);
   }
 
-  onCompanyButtonNavigateClick(id: number) {
+  onCompanyButtonNavigateClick(id: string) {
     this.router.navigate(['company', id]);
   }
 
-  onEditNavigate(id: number) {
+  onEditNavigate(id: string) {
     this.router.navigate(['edit', id]);
   }
 }

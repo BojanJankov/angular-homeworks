@@ -3,6 +3,7 @@ import { JobFormComponent } from '../job-form/job-form.component';
 import { Job, JobFormModel } from '../../models/job.model';
 import { JobsService } from '../../../../core/services/jobs.service';
 import { Router } from '@angular/router';
+import { v4 as uuid } from 'uuid';
 
 @Component({
   selector: 'app-add-job',
@@ -16,8 +17,9 @@ export class AddJobComponent {
   private jobsService = inject(JobsService);
 
   onAddJob(formJob: JobFormModel) {
+    console.log(this.jobsService.jobs.length);
     const newJob: Job = {
-      id: this.jobsService.jobs.length + 1,
+      id: uuid(),
       company: {
         logo: formJob.logo,
         name: formJob.name,
@@ -38,6 +40,8 @@ export class AddJobComponent {
     };
 
     this.jobsService.addJob(newJob);
+
+    console.log(newJob);
 
     this.router.navigate(['jobs']);
   }

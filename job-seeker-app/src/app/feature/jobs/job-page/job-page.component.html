@@ -1,6 +1,34 @@
 <section class="job-page">
+  <div class="container">
+    <div class="search-filters-container">
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Enter your position..."
+          class="search-input"
+          [(ngModel)]="searchValue"
+        />
+      </div>
+      <div class="filters-container">
+        <app-button text="Salary" (btnClick)="onClickSort()"></app-button>
+        <app-button
+          text="Remote"
+          (btnClick)="onFilterButtonClick(filterValue.REMOTE)"
+        ></app-button>
+        <app-button
+          text="Onsite"
+          (btnClick)="onFilterButtonClick(filterValue.ONSITE)"
+        ></app-button>
+        <app-button
+          text="Hybrid"
+          (btnClick)="onFilterButtonClick(filterValue.HYBRID)"
+        ></app-button>
+        <app-button text="Reset" (btnClick)="onResetClick()"></app-button>
+      </div>
+    </div>
+  </div>
   <div class="job-lists-container">
-    <app-job-list></app-job-list>
-    <app-apply-job-list></app-apply-job-list>
+    <app-job-list [searchValue]="searchValue()"></app-job-list>
+    <app-apply-job-list [searchValue]="searchValue()"></app-apply-job-list>
   </div>
 </section>

@@ -1,8 +1,15 @@
 <div class="applied-job-list-container" *ngIf="appliedJobs().length > 0">
+  @if(searchValue()){
+  <h3>Searched applied jobs:</h3>
+  } @else {
   <h3>Applied jobs:({{ totalAppliedJobNumer() }})</h3>
+  }
   <div class="job-list-container">
-    @for(job of appliedJobs(); track job.id){
+    @for(job of appliedJobs() | filter: searchValue(); track job.id){
     <app-apply-job-item [appliedJob]="job"></app-apply-job-item>
+    } @empty {
+    <h4>No jobs found!</h4>
+
     }
   </div>
 </div>

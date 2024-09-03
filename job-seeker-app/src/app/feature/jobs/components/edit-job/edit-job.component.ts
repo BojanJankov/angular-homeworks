@@ -21,7 +21,7 @@ export class EditJobComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
 
-    const foundJob = this.jobsService.getJobById(Number(id));
+    const foundJob = this.jobsService.getJobById(id);
 
     this.selectedJob.set(foundJob);
   }

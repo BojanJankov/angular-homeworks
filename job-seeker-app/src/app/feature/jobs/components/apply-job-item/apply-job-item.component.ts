@@ -18,11 +18,11 @@ export class ApplyJobItemComponent {
   private router = inject(Router);
   appliedJob = input<Job>(null);
 
-  onCancelClick(id: number) {
+  onCancelClick(id: string) {
     this.jobService.onCancelJob(id);
   }
 
-  onCompanyButtonNavigateClick(id: number) {
+  onCompanyButtonNavigateClick(id: string) {
     this.router.navigate(['company', id]);
   }
 }
