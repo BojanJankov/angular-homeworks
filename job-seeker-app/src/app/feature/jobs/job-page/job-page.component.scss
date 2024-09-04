@@ -20,6 +20,7 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  padding: 0 10px;
 }
 
 .filters-container {
@@ -29,12 +30,13 @@
 
 .search-input {
   height: 20px;
-  width: 200px;
+  width: 400px;
   border: 0.5px solid slategray;
   border-radius: 3px;
   font-size: 14px;
   font-weight: 500;
-  padding: 4px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 5px;
 
   &:hover {
     border: 1px solid black;
