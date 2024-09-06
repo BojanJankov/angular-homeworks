@@ -31,8 +31,8 @@
 .search-input {
   height: 20px;
   width: 400px;
-  border: 0.5px solid slategray;
-  border-radius: 3px;
+  border: 0.5px solid var(--black);
+  border-radius: 5px;
   font-size: 14px;
   font-weight: 500;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1);

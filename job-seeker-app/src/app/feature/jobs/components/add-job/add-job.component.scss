@@ -4,7 +4,7 @@
 }
 
 .add-job-form-container {
-  background-color: #4361ee;
+  background-color: var(--bg-blue);
   width: 1000px;
   padding: 20px 40px;
   border-radius: 4px;
@@ -20,6 +20,6 @@
   h2 {
     margin: 10px;
     font-size: 30px;
-    color: white;
+    color: var(--bg-white);
   }
 }

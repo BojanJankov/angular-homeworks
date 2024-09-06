@@ -1,9 +1,9 @@
 .to-top {
   width: 50px;
   height: 30px;
-  background-color: white;
-  color: #4361ee;
-  border: 0.5px solid slategray;
+  background-color: var(--bg-white);
+  color: var(--bg-blue);
+  border: 0.1px solid var(--bg-blue);
   border-radius: 3px;
   cursor: pointer;
   font-size: 14px;

@@ -1,0 +1,48 @@
+.job-item {
+  height: max-content;
+  background-color: var(--bg-blue);
+  color: var(--bg-white);
+  border-radius: 4px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.job-item-heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.job-item-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+}
+
+.more-details-container {
+  cursor: pointer;
+  h4 {
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+.more-details-controls {
+  display: flex;
+  gap: 10px;
+}

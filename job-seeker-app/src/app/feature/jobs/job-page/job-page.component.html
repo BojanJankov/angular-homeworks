@@ -10,20 +10,31 @@
         />
       </div>
       <div class="filters-container">
-        <app-button text="Salary" (btnClick)="onClickSort()"></app-button>
+        <app-button
+          text="Salary"
+          (btnClick)="onClickSort()"
+          [style]="{ border: '0.2px solid black' }"
+        ></app-button>
         <app-button
           text="Remote"
           (btnClick)="onFilterButtonClick(filterValue.REMOTE)"
+          [style]="{ border: '0.2px solid black' }"
         ></app-button>
         <app-button
           text="Onsite"
           (btnClick)="onFilterButtonClick(filterValue.ONSITE)"
+          [style]="{ border: '0.2px solid black' }"
         ></app-button>
         <app-button
           text="Hybrid"
           (btnClick)="onFilterButtonClick(filterValue.HYBRID)"
+          [style]="{ border: '0.2px solid black' }"
         ></app-button>
-        <app-button text="Reset" (btnClick)="onResetClick()"></app-button>
+        <app-button
+          text="Reset"
+          (btnClick)="onResetClick()"
+          [style]="{ border: '0.2px solid black' }"
+        ></app-button>
       </div>
     </div>
   </div>

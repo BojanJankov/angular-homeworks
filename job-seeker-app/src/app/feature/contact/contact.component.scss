@@ -6,13 +6,13 @@
 
 .contact-container {
   width: 800px;
-  background-color: #4361ee;
+  background-color: var(--bg-blue);
   padding: 40px 20px;
   border-radius: 4px;
   height: 450px;
   display: grid;
   grid-template-columns: 60% 40%;
-  color: white;
+  color: var(--bg-white);
 }
 
 .contact-form {
@@ -30,8 +30,8 @@
   }
 
   input {
-    background-color: whitesmoke;
-    border: 0.5px solid lightgray;
+    background-color: var(--bg-whitesmoke);
+    border: 0.5px solid var(--bg-grey);
     border-radius: 5px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
     color: black;
@@ -39,13 +39,13 @@
   }
 
   input.ng-invalid.ng-touched {
-    border: 2px solid red;
+    border: 2px solid var(--error);
   }
 
   textarea {
-    background-color: whitesmoke;
+    background-color: var(--bg-whitesmoke);
     border-radius: 5px;
-    border: 0.5px solid lightgray;
+    border: 0.5px solid var(--bg-grey);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
     color: black;
     padding: 5px;
@@ -53,7 +53,7 @@
   }
 
   textarea.ng-invalid.ng-touched {
-    border: 2px solid red;
+    border: 2px solid var(--error);
   }
 }
 
@@ -69,12 +69,12 @@
 }
 
 .error-message {
-  color: darkred;
+  color: var(--error);
   font-size: 14px;
 }
 
 .contact-media-info {
-  border-left: 1px solid white;
+  border-left: 1px solid var(--bg-white);
   padding: 0px 20px;
   display: flex;
   flex-direction: column;
@@ -99,4 +99,12 @@
   display: flex;
   gap: 10px;
   align-items: center;
+
+  strong {
+    cursor: pointer;
+
+    &:hover {
+      color: var(--hover);
+    }
+  }
 }

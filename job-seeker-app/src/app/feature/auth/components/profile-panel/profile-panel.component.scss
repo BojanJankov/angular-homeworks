@@ -6,12 +6,12 @@
 
 .profile-panel {
   padding: 40px;
-  background-color: #4361ee;
+  background-color: var(--bg-blue);
   width: 1000px;
   min-height: 500px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: white;
+  color: var(--bg-white);
 }
 
 .profile-panel-image-container {
@@ -38,7 +38,7 @@
 }
 
 .profile-panel-infomations-nav {
-  background-color: white;
+  background-color: var(--bg-white);
   border: none;
   border-radius: 4px;
   display: flex;
@@ -71,7 +71,7 @@
 
   strong {
     font-size: 20px;
-    color: white;
+    color: var(--bg-white);
   }
 }
 
@@ -83,7 +83,7 @@
 }
 
 .info-row-data-div {
-  background-color: whitesmoke;
+  background-color: var(--bg-whitesmoke);
   min-height: 20px;
   width: 230px;
   border-radius: 5px;

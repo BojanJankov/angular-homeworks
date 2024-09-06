@@ -10,13 +10,13 @@
 }
 
 .about-container {
-  background-color: #4361ee;
+  background-color: var(--bg-blue);
   width: 1000px;
   height: max-content;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  color: white;
+  color: var(--bg-white);
   padding: 50px;
   gap: 30px;
 }

@@ -1,18 +1,16 @@
-<section class="filter-job-list-container">
-  <div class="container">
-    <div class="job-list-heading">
-      @if(searchValue()){
-      <h3>Searched available jobs:</h3>
-      } @else {
-      <h3>Available jobs:({{ jobs().length }})</h3>
-      }
-    </div>
-    <div class="job-list-container">
-      @for(job of jobs() | filter: searchValue(); track job.id){
-      <app-job-item [job]="job"></app-job-item>
-      } @empty {
-      <h4>No jobs found!</h4>
-      }
-    </div>
+<div class="container">
+  <div class="job-list-heading">
+    @if(searchValue()){
+    <h2>Searched available jobs:</h2>
+    } @else {
+    <h2>Available jobs:({{ jobs().length }})</h2>
+    }
   </div>
-</section>
+  <div class="job-list-container">
+    @for(job of jobs() | filter: searchValue(); track job.id){
+    <app-job-item [job]="job"></app-job-item>
+    } @empty {
+    <h4>No jobs found!</h4>
+    }
+  </div>
+</div>

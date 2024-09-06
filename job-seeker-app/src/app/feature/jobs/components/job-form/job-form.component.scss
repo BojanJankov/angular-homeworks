@@ -4,7 +4,7 @@
   gap: 50px;
 
   h2 {
-    color: white;
+    color: var(--bg-white);
   }
 
   p {
@@ -12,7 +12,7 @@
   }
 
   small {
-    color: white;
+    color: var(--bg-white);
   }
 }
 
@@ -35,12 +35,13 @@
 
   label {
     font-size: 18px;
-    color: white;
+    color: var(--bg-white);
   }
 
   input {
-    background-color: whitesmoke;
-    border: 0.5px solid lightgray;
+    min-height: 20px;
+    background-color: var(--bg-whitesmoke);
+    border: 0.5px solid var(--bg-grey);
     border-radius: 5px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
     color: black;
@@ -48,12 +49,13 @@
   }
 
   input.ng-invalid.ng-touched {
-    border: 2px solid red;
+    border: 2px solid var(--error);
   }
 
   select {
-    background-color: whitesmoke;
-    border: 0.5px solid lightgray;
+    min-height: 20px;
+    background-color: var(--bg-whitesmoke);
+    border: 0.5px solid var(--bg-grey);
     border-radius: 5px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
     color: black;
@@ -61,13 +63,13 @@
   }
 
   select.ng-invalid.ng-touched {
-    border: 2px solid red;
+    border: 2px solid var(--error);
   }
 
   textarea {
-    background-color: whitesmoke;
+    background-color: var(--bg-whitesmoke);
     border-radius: 5px;
-    border: 0.5px solid lightgray;
+    border: 0.5px solid var(--bg-grey);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
     color: black;
     padding: 5px;
@@ -75,7 +77,7 @@
   }
 
   textarea.ng-invalid.ng-touched {
-    border: 2px solid red;
+    border: 2px solid var(--error);
   }
 }
 
@@ -88,5 +90,5 @@
 .error-message {
   margin: 0;
   font-size: 14px;
-  color: red;
+  color: var(--error);
 }
