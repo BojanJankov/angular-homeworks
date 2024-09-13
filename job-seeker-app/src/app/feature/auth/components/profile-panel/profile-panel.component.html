@@ -1,4 +1,4 @@
-<!-- <section class="profile-page">
+<section class="profile-page">
   <div class="profile-panel">
     <div class="profile-panel-image-container">
       <div>
@@ -38,28 +38,32 @@
       </div>
       <div class="profile-panel-informations" *ngIf="!isAuthInfoShown()">
         <div class="profile-panel-info-row">
-          <strong>Name:</strong>
+          <strong>Full name:</strong>
           <div class="info-row-data-div">
             {{ user().firstName }} {{ user().lastName }}
           </div>
         </div>
         <div class="profile-panel-info-row">
-          <strong>Date of birth:</strong>
+          <strong>Username:</strong>
           <div class="info-row-data-div">
-            {{ user().dateOfBirth | date : "MM/dd/yyyy" }}
+            {{ user().username }}
           </div>
         </div>
         <div class="profile-panel-info-row">
-          <strong>Gender:</strong>
-          <div class="info-row-data-div">{{ user().gender }}</div>
+          <strong>Country:</strong>
+          <div class="info-row-data-div">{{ user().country }}</div>
         </div>
         <div class="profile-panel-info-row">
-          <strong>Profesion:</strong>
-          <div class="info-row-data-div">{{ user().profesion }}</div>
+          <strong>City:</strong>
+          <div class="info-row-data-div">{{ user().city }}</div>
         </div>
         <div class="profile-panel-info-row">
-          <strong>Education:</strong>
-          <div class="info-row-data-div">{{ user().education }}</div>
+          <strong>Years of experience:</strong>
+          <div class="info-row-data-div">{{ user().yearsOfExperience }}</div>
+        </div>
+        <div class="profile-panel-info-row">
+          <strong>Work status:</strong>
+          <div class="info-row-data-div">{{ user().workStatus }}</div>
         </div>
       </div>
       <div class="profile-panel-informations" *ngIf="isAuthInfoShown()">
@@ -69,7 +73,7 @@
         </div>
         <div class="profile-panel-info-row">
           <strong>Password:</strong>
-          <div class="info-row-data-div">123456789</div>
+          <div class="info-row-data-div">{{ user().password }}</div>
         </div>
         <div class="profile-panel-info-row">
           <strong>Change password:</strong>
@@ -85,4 +89,4 @@
       </div>
     </div>
   </div>
-</section> -->
+</section>

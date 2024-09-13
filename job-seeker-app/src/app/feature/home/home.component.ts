@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ButtonComponent } from '../../shared/components/button/button.component';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +13,11 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent {
   private router = inject(Router);
+  private authService = inject(AuthService);
 
-  onNaviagteClick() {
-    this.router.navigate(['jobs']);
+  currentUser = this.authService.currentUser;
+
+  onNaviagteClick(route: string) {
+    this.router.navigate([route]);
   }
 }

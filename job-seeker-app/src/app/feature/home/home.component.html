@@ -3,7 +3,9 @@
     <h1>Are you <span>looking</span> for a job<span>?</span></h1>
     <app-button
       text="Check alivable jobs"
-      (btnClick)="onNaviagteClick()"
+      (btnClick)="
+        currentUser() ? onNaviagteClick('jobs') : onNaviagteClick('login')
+      "
       [style]="{
         backgroundColor: '#4361ee',
         width: '220px',

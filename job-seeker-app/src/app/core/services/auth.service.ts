@@ -46,6 +46,12 @@ export class AuthService {
     });
   }
 
+  logoutUser() {
+    this.currentUser.set(null);
+    localStorage.clear();
+    this.router.navigate(['login']);
+  }
+
   saveUserInLocalStorage(currentUser: User) {
     localStorage.setItem('currentUser', JSON.stringify(currentUser));
   }
