@@ -1,0 +1,20 @@
+<footer class="footer">
+  <div class="footer-info">
+    <small>Created by Bojan Jankov © 2024</small>
+    <div class="footer-media-container">
+      <small><i class="fa-brands fa-linkedin-in"></i></small>
+      <small><i class="fa-brands fa-instagram"></i></small>
+      <small><i class="fa-brands fa-facebook-f"></i></small>
+    </div>
+  </div>
+  <div class="footer-nav">
+    <ul class="footer-nav-list">
+      <li><a routerLink="/">Home</a></li>
+      @if(currentUser()){
+      <li><a routerLink="/jobs">Jobs</a></li>
+      }
+      <li><a routerLink="/about">About</a></li>
+      <li><a>Contact</a></li>
+    </ul>
+  </div>
+</footer>

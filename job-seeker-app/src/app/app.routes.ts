@@ -8,6 +8,8 @@ import { AboutComponent } from './feature/about/about.component';
 import { ContactComponent } from './feature/contact/contact.component';
 import { AddJobComponent } from './feature/jobs/components/add-job/add-job.component';
 import { EditJobComponent } from './feature/jobs/components/edit-job/edit-job.component';
+import { RegisterComponent } from './feature/auth/components/register/register.component';
+import { LoginComponent } from './feature/auth/components/login/login.component';
 
 export const routes: Routes = [
   {
@@ -41,6 +43,14 @@ export const routes: Routes = [
   {
     path: 'company/:id',
     component: ComapnyDetailsComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
   {
     path: 'not-found',

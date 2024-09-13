@@ -1,11 +1,30 @@
 export interface User {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
-  dateOfBirth: string;
-  gender: string;
+  username: string;
   email: string;
-  profesion: string;
-  about: string;
-  education: string;
+  password: string;
+  country: string;
+  city: string;
+  yearsOfExperience: number;
+  workStatus: string;
+  token: string;
+}
+
+export interface RegisterReq {
+  firstName: string;
+  lastName: string;
+  username: string;
+  email: string;
+  password: string;
+  country: string;
+  city: string;
+  yearsOfExperience: number;
+  workStatus: string;
+}
+
+export interface UserCredentials {
+  email: string;
+  password: string;
 }

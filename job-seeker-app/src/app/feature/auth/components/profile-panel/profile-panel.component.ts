@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { User } from '../../models/auth.model';
-import { userMock } from '../../users.mock';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { CommonModule } from '@angular/common';
 
@@ -11,16 +10,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './profile-panel.component.html',
   styleUrl: './profile-panel.component.scss',
 })
-export class ProfilePanelComponent {
-  user = signal<User>(userMock);
-
-  isAuthInfoShown = signal(false);
-
-  onUserInfoClick() {
-    this.isAuthInfoShown.set(true);
-  }
-
-  onPersonalInfoClick() {
-    this.isAuthInfoShown.set(false);
-  }
-}
+export class ProfilePanelComponent {}

@@ -1,0 +1,33 @@
+.register-page {
+  display: grid;
+  place-items: center;
+  min-height: 600px;
+}
+
+.register-form-container {
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-blue);
+  border-radius: 2px;
+  padding: 50px 30px;
+
+  h2 {
+    font-size: 30px;
+    color: var(--bg-white);
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-auth-form-informations,
+.user-form-personal-informations {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

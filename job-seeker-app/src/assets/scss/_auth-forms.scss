@@ -1,0 +1,42 @@
+.form-group {
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  label {
+    font-size: 18px;
+    color: var(--bg-white);
+  }
+}
+
+.form-control {
+  min-height: 20px;
+  background-color: var(--bg-whitesmoke);
+  border: 0.5px solid var(--bg-grey);
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.14), 0 6px 6px rgba(0, 0, 0, 0.28);
+  color: black;
+  padding: 5px;
+}
+
+.form-button-group {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 0;
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid var(--error);
+}
+
+select.ng-invalid.ng-touched {
+  border: 2px solid var(--error);
+}
+
+.error-message {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--error);
+}

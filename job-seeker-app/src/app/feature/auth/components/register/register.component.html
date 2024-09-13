@@ -1,0 +1,128 @@
+<section class="register-page">
+  <div class="register-form-container">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
+      <div class="user-auth-form-informations">
+        <div class="form-group">
+          <label for="firstName">First name*</label>
+          <input
+            type="text"
+            id="firstName"
+            formControlName="firstName"
+            class="form-control"
+            placeholder="3-30 characters"
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last name*</label>
+          <input
+            type="text"
+            id="lastName"
+            formControlName="lastName"
+            class="form-control"
+            placeholder="3-30 characters"
+          />
+        </div>
+        <div class="form-group">
+          <label for="username">Username*</label>
+          <input
+            type="text"
+            id="username"
+            formControlName="username"
+            class="form-control"
+            placeholder="6-20 characters"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email*</label>
+          <input
+            type="text"
+            id="email"
+            formControlName="email"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password*</label>
+          <input
+            type="password"
+            id="password"
+            formControlName="password"
+            class="form-control"
+            placeholder="8-30 characters"
+          />
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm password*</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            class="form-control"
+          />
+        </div>
+        @if(registerForm.get("confirmPassword").touched &&
+        registerForm.get("confirmPassword").errors?.passwordMissMatch){
+        <p class="error-message">Password must match!</p>
+        }
+      </div>
+      @if(registerForm.get("firstName").value.length &&
+      registerForm.get("lastName").value.length &&
+      registerForm.get("username").value.length &&
+      registerForm.get("password").value.length &&
+      registerForm.get("confirmPassword").value.length){
+      <div class="user-form-personal-informations">
+        <div class="form-group">
+          <label for="country">Country*</label>
+          <input
+            type="text"
+            id="country"
+            formControlName="country"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="city">City*</label>
+          <input
+            type="text"
+            id="city"
+            formControlName="city"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="yearsOfExperience">Years of experience*</label>
+          <input
+            type="number"
+            id="yearsOfExperience"
+            formControlName="yearsOfExperience"
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label for="workStatus">Work status*</label>
+          <select
+            id="workStatus"
+            class="form-control"
+            formControlName="workStatus"
+          >
+            <option value="searching">Searching</option>
+            <option value="employed">Employed</option>
+            <option value="unemployed">Unemployed</option>
+          </select>
+        </div>
+        @if(isSubmitted() && registerForm.invalid && registerForm.touched){
+        <p class="error-message">All fields are required!</p>
+        }
+        <div class="form-button-group">
+          <app-button
+            text="Register"
+            [style]="{ width: '150px', fontSize: '16px' }"
+            type="submit"
+          ></app-button>
+        </div>
+      </div>
+      }
+    </form>
+  </div>
+</section>
