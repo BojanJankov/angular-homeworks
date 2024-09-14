@@ -23,12 +23,11 @@ import { FormsModule } from '@angular/forms';
 export class JobPageComponent implements OnInit {
   readonly filterValue = JobWorkTypeFilter;
   private jobsService = inject(JobsService);
+  searchValue = model<string>('');
 
   ngOnInit(): void {
     this.jobsService.getAllJobs();
   }
-
-  searchValue = model<string>('');
 
   onClickSort() {
     this.jobsService.sortBySalary();

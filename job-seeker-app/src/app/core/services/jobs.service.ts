@@ -1,4 +1,11 @@
-import { computed, inject, Injectable, signal } from '@angular/core';
+import {
+  computed,
+  effect,
+  inject,
+  Injectable,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { Job, JobFormModel } from '../../feature/jobs/models/job.model';
 import { JobsApiService } from './jobs-api.service';
 import { map } from 'rxjs';
@@ -11,13 +18,22 @@ export class JobsService {
 
   jobs = signal<Job[]>([]);
   selectedJob = signal<Job>(null);
-  filteredJobs = computed<Job[]>(() => {
-    return this.jobs();
-  });
+  filteredJobs = signal<Job[]>([]);
 
   totalAppliedJobs = computed<number>(() => {
     return this.jobs().filter((job) => job.isApplied).length;
   });
+
+  constructor() {
+    effect(
+      () => {
+        this.filteredJobs.set(this.jobs());
+      },
+      {
+        allowSignalWrites: true,
+      }
+    );
+  }
 
   getAllJobs() {
     this.apiService
@@ -94,16 +110,16 @@ export class JobsService {
   sortBySalary() {
     const copyArr = [...this.jobs()];
     copyArr.sort((a, b) => b.startingSalary - a.startingSalary);
-    this.jobs.set(copyArr);
+    this.filteredJobs.set(copyArr);
   }
 
   sortByWork(value: string) {
-    let copyJobArray: Job[] = [...this.filteredJobs()];
+    let copyJobArray: Job[] = [...this.jobs()];
 
-    this.jobs.set(copyJobArray.filter((job) => job.workType === value));
+    this.filteredJobs.set(copyJobArray.filter((job) => job.workType === value));
   }
 
   resetFilter() {
-    this.jobs.set(this.jobs());
+    this.filteredJobs.set(this.jobs());
   }
 }

@@ -1,11 +1,4 @@
-import {
-  Component,
-  computed,
-  inject,
-  input,
-  OnInit,
-  signal,
-} from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { JobsService } from '../../../../core/services/jobs.service';
 import { Job } from '../../models/job.model';
 import { ApplyJobItemComponent } from '../apply-job-item/apply-job-item.component';
