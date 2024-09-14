@@ -1,14 +1,16 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
-import { Job } from '../../feature/jobs/models/job.model';
-import { jobsMock } from '../../feature/jobs/jobs.mock';
-import { Router } from '@angular/router';
+import { Job, JobFormModel } from '../../feature/jobs/models/job.model';
+import { JobsApiService } from './jobs-api.service';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class JobsService {
-  private router = inject(Router);
-  jobs = signal<Job[]>(jobsMock);
+  private apiService = inject(JobsApiService);
+
+  jobs = signal<Job[]>([]);
+  selectedJob = signal<Job>(null);
   filteredJobs = computed<Job[]>(() => {
     return this.jobs();
   });
@@ -17,15 +19,53 @@ export class JobsService {
     return this.jobs().filter((job) => job.isApplied).length;
   });
 
-  getJobById(id: string) {
-    const foundJob = this.jobs().find((job) => job.id === id);
-
-    if (!foundJob) this.router.navigate(['not-found']);
-
-    return foundJob;
+  getAllJobs() {
+    this.apiService
+      .fetchAllJobs()
+      .pipe(
+        map((jobs: Job[]) =>
+          jobs.map((job) => {
+            return { ...job, isApplied: false };
+          })
+        )
+      )
+      .subscribe({
+        next: (value) => {
+          console.log(value);
+          this.jobs.set(value);
+        },
+        error: (error) => console.log(error),
+      });
   }
 
-  onApplyJob(id: string) {
+  getJobById(id: string) {
+    return this.apiService.fetchJobById(+id).subscribe({
+      next: (job) => {
+        this.selectedJob.set(job);
+      },
+      error: (error) => console.log(error),
+    });
+  }
+
+  addJob(job: JobFormModel) {
+    this.apiService.crateJob(job).subscribe({
+      next: () => {
+        console.log('job added');
+      },
+      error: (error) => console.log(error),
+    });
+  }
+
+  editJob(id: number, editedJob: JobFormModel) {
+    this.apiService.editJob(id, editedJob).subscribe({
+      next: () => {
+        console.log('job eddited');
+      },
+      error: (error) => console.log(error),
+    });
+  }
+
+  onApplyJob(id: number) {
     this.jobs.update((prev) =>
       prev.map((job) => {
         if (job.id === id) {
@@ -38,7 +78,7 @@ export class JobsService {
     );
   }
 
-  onCancelJob(id: string) {
+  onCancelJob(id: number) {
     this.jobs.update((prev) =>
       prev.map((job) => {
         if (job.id === id) {
@@ -58,30 +98,12 @@ export class JobsService {
   }
 
   sortByWork(value: string) {
-    let copyJobArray: Job[] = [...this.jobs()];
+    let copyJobArray: Job[] = [...this.filteredJobs()];
 
-    copyJobArray = jobsMock.filter((job) => job.workType === value);
-
-    this.jobs.set(copyJobArray);
-  }
-
-  addJob(job: Job) {
-    this.jobs.update((prev) => [...prev, job]);
-  }
-
-  editJob(editedJob: Job) {
-    this.jobs.update((prev) =>
-      prev.map((job) => {
-        if (job.id === editedJob.id) {
-          return { ...editedJob };
-        } else {
-          return job;
-        }
-      })
-    );
+    this.jobs.set(copyJobArray.filter((job) => job.workType === value));
   }
 
   resetFilter() {
-    this.jobs.set(jobsMock);
+    this.jobs.set(this.jobs());
   }
 }

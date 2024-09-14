@@ -10,6 +10,7 @@ import { AddJobComponent } from './feature/jobs/components/add-job/add-job.compo
 import { EditJobComponent } from './feature/jobs/components/edit-job/edit-job.component';
 import { RegisterComponent } from './feature/auth/components/register/register.component';
 import { LoginComponent } from './feature/auth/components/login/login.component';
+import { authGuard } from './core/guards';
 
 export const routes: Routes = [
   {
@@ -19,30 +20,37 @@ export const routes: Routes = [
   {
     path: 'jobs',
     component: JobPageComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'add-job',
     component: AddJobComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'edit/:id',
     component: EditJobComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'about',
     component: AboutComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'contact',
     component: ContactComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'profile',
     component: ProfilePanelComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'company/:id',
     component: ComapnyDetailsComponent,
+    canActivate: [authGuard],
   },
   {
     path: 'register',

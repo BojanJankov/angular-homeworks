@@ -40,19 +40,18 @@ export class JobFormComponent {
         Validators.required,
         Validators.maxLength(this.textAreaMaxLength),
       ]),
-      description: new FormControl('', [
+      jobDescription: new FormControl('', [
         Validators.required,
         Validators.maxLength(this.textAreaMaxLength),
       ]),
-      logo: new FormControl('', [Validators.required, this.urlValidator]),
-      name: new FormControl('', Validators.required),
-      employees: new FormControl('', Validators.required),
-      companyDescription: new FormControl('', [
+      companyLogo: new FormControl('', [
         Validators.required,
-        Validators.maxLength(this.textAreaMaxLength),
+        this.urlValidator,
       ]),
-      state: new FormControl('', Validators.required),
-      website: new FormControl('', Validators.required),
+      companyName: new FormControl('', Validators.required),
+      companyAddress: new FormControl('', Validators.required),
+      companyIndustry: new FormControl('', [Validators.required]),
+      companyWebsite: new FormControl('', Validators.required),
     });
   }
 
@@ -73,13 +72,12 @@ export class JobFormComponent {
       location: editJob.location,
       country: editJob.country,
       qualifications: editJob.qualifications,
-      description: editJob.description,
-      logo: editJob.company.logo,
-      name: editJob.company.name,
-      employees: editJob.company.employees,
-      companyDescription: editJob.company.companyDescription,
-      state: editJob.company.state,
-      website: editJob.company.website,
+      jobDescription: editJob.jobDescription,
+      companyLogo: editJob.companyLogo,
+      companyName: editJob.companyName,
+      companyAddress: editJob.companyAddress,
+      companyIndustry: editJob.companyIndustry,
+      companyWebsite: editJob.companyWebsite,
     });
   }
 

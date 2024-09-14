@@ -1,4 +1,4 @@
-import { Component, inject, model } from '@angular/core';
+import { Component, inject, model, OnInit } from '@angular/core';
 import { JobListComponent } from '../components/job-list/job-list.component';
 import { ApplyJobListComponent } from '../components/apply-job-list/apply-job-list.component';
 import { JobsService } from '../../../core/services/jobs.service';
@@ -20,9 +20,13 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './job-page.component.html',
   styleUrl: './job-page.component.scss',
 })
-export class JobPageComponent {
+export class JobPageComponent implements OnInit {
   readonly filterValue = JobWorkTypeFilter;
   private jobsService = inject(JobsService);
+
+  ngOnInit(): void {
+    this.jobsService.getAllJobs();
+  }
 
   searchValue = model<string>('');
 

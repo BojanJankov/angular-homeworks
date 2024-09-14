@@ -13,8 +13,4 @@ export class HeaderComponent {
   private authService = inject(AuthService);
 
   currentUser = this.authService.currentUser;
-
-  onLogoutClick() {
-    this.authService.logoutUser();
-  }
 }

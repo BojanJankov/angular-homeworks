@@ -16,27 +16,21 @@ export class EditJobComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private jobsService = inject(JobsService);
 
-  selectedJob = signal<Job>(null);
+  selectedJob = this.jobsService.selectedJob;
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
 
-    const foundJob = this.jobsService.getJobById(id);
-
-    this.selectedJob.set(foundJob);
+    this.jobsService.getJobById(id);
   }
 
   onEditForm(formJob: JobFormModel) {
-    const editedJob: Job = {
-      id: this.selectedJob().id,
-      company: {
-        logo: formJob.logo,
-        name: formJob.name,
-        employees: formJob.employees,
-        companyDescription: formJob.companyDescription,
-        state: formJob.state,
-        website: formJob.website,
-      },
+    const editedJob = {
+      companyLogo: formJob.companyLogo,
+      companyName: formJob.companyName,
+      companyAddress: formJob.companyAddress,
+      companyIndustry: formJob.companyIndustry,
+      companyWebsite: formJob.companyWebsite,
       expires: formJob.expires,
       position: formJob.position,
       startingSalary: formJob.startingSalary,
@@ -44,11 +38,10 @@ export class EditJobComponent implements OnInit {
       location: formJob.location,
       country: formJob.country,
       qualifications: formJob.qualifications,
-      description: formJob.description,
-      isApplied: false,
+      jobDescription: formJob.jobDescription,
     };
 
-    this.jobsService.editJob(editedJob);
+    this.jobsService.editJob(this.selectedJob().id, editedJob);
 
     this.router.navigate(['jobs']);
   }

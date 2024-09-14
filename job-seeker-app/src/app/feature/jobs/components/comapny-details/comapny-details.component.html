@@ -2,18 +2,15 @@
   <div class="company-details">
     <div class="company-heading">
       <div class="company-logo-container">
-        <img src="{{ selectedJob().company.logo }}" alt="comapny logo" />
+        <img src="{{ selectedJob().companyLogo }}" alt="comapny logo" />
       </div>
       <div class="company-info-container">
         <div class="company-name-container">
-          <h2>{{ selectedJob().company.name }}</h2>
+          <h2>{{ selectedJob().companyName }}</h2>
         </div>
         <div>
-          <p>
-            <strong>Employers:</strong> {{ selectedJob().company.employees }}
-          </p>
-          <p><strong>State:</strong> {{ selectedJob().company.state }}</p>
-          <p><strong>Website:</strong> {{ selectedJob().company.website }}</p>
+          <p><strong>Address:</strong> {{ selectedJob().companyAddress }}</p>
+          <p><strong>Website:</strong> {{ selectedJob().companyWebsite }}</p>
         </div>
       </div>
     </div>
@@ -22,7 +19,7 @@
         <h2>About company</h2>
       </div>
       <div class="company-description-text">
-        <p>{{ selectedJob().company.companyDescription }}</p>
+        <p>{{ selectedJob().companyIndustry }}</p>
       </div>
     </div>
   </div>

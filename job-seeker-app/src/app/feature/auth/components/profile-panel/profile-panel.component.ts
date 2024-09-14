@@ -25,4 +25,8 @@ export class ProfilePanelComponent {
   onPersonalInfoClick() {
     this.isAuthInfoShown.set(false);
   }
+
+  onLogoutClick() {
+    this.authService.logoutUser();
+  }
 }

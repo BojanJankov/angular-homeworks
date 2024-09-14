@@ -13,8 +13,9 @@
     </div>
     <div class="form-group">
       <label for="job-company">Company name:</label>
-      <input type="text" id="job-company" formControlName="name" />
-      @if(jobForm.get('name').touched && jobForm.get('name').errors?.required){
+      <input type="text" id="job-company" formControlName="companyName" />
+      @if(jobForm.get('companyName').touched &&
+      jobForm.get('companyName').errors?.required){
       <p class="error-message">Company name is required!</p>
       }
     </div>
@@ -99,18 +100,20 @@
         id="job-description"
         cols="50"
         rows="5"
-        formControlName="description"
+        formControlName="jobDescription"
       ></textarea>
       <small>
-        {{ jobForm.controls.description.value.length }}/{{ textAreaMaxLength }}
+        {{ jobForm.controls.jobDescription.value.length }}/{{
+          textAreaMaxLength
+        }}
       </small>
-      @if(jobForm.get('description').touched &&
-      jobForm.get('description').errors?.required){
+      @if(jobForm.get('jobDescription').touched &&
+      jobForm.get('jobDescription').errors?.required){
       <p class="error-message">Description about job is required!</p>
       }
     </div>
   </div>
-  <div class="job-form-company" *ngIf="jobForm.get('name').value">
+  <div class="job-form-company">
     <div>
       <h2>Company informations:</h2>
     </div>
@@ -119,58 +122,53 @@
       <input
         type="text"
         id="company-logo"
-        formControlName="logo"
+        formControlName="companyLogo"
         placeholder="URL"
       />
-      @if(jobForm.get('logo').touched && jobForm.get('logo').errors?.validUrl &&
-      jobForm.get('logo').value.length > 0 ) {
+      @if(jobForm.get('companyLogo').touched &&
+      jobForm.get('companyLogo').errors?.validUrl &&
+      jobForm.get('companyLogo').value.length > 0 ) {
       <p class="error-message">Only urls served over http.</p>
-      } @if(jobForm.get('logo').touched &&
-      jobForm.get('logo').errors?.required){
+      } @if(jobForm.get('companyLogo').touched &&
+      jobForm.get('companyLogo').errors?.required){
       <p class="error-message">Logo url is required!</p>
 
       }
     </div>
     <div class="form-group">
-      <label for="company-employees">Company employees:</label>
-      <input type="number" id="company-employees" formControlName="employees" />
-      @if(jobForm.get('employees').touched &&
-      jobForm.get('employees').errors?.required){
-      <p class="error-message">Employees is required!</p>
-      }
-    </div>
-    <div class="form-group">
-      <label for="company-state">Company state:</label>
-      <input type="text" id="company-state" formControlName="state" />
-      @if(jobForm.get('state').touched &&
-      jobForm.get('state').errors?.required){
-      <p class="error-message">State is required!</p>
+      <label for="company-address">Company address:</label>
+      <input
+        type="text"
+        id="company-address"
+        formControlName="companyAddress"
+      />
+      @if(jobForm.get('companyAddress').touched &&
+      jobForm.get('companyAddress').errors?.required){
+      <p class="error-message">Address is required!</p>
       }
     </div>
     <div class="form-group">
       <label for="company-website">Company website:</label>
-      <input type="text" id="company-website" formControlName="website" />
-      @if(jobForm.get('website').touched &&
-      jobForm.get('website').errors?.required){
+      <input
+        type="text"
+        id="company-website"
+        formControlName="companyWebsite"
+      />
+      @if(jobForm.get('companyWebsite').touched &&
+      jobForm.get('companyWebsite').errors?.required){
       <p class="error-message">Website is required!</p>
       }
     </div>
     <div class="form-group">
-      <label for="company-description">About company:</label>
-      <textarea
-        id="company-description"
-        cols="50"
-        rows="5"
-        formControlName="companyDescription"
-      ></textarea>
-      <small>
-        {{ jobForm.controls.companyDescription.value.length }}/{{
-          textAreaMaxLength
-        }}
-      </small>
-      @if(jobForm.get('companyDescription').touched &&
-      jobForm.get('companyDescription').errors?.required){
-      <p class="error-message">About company is required!</p>
+      <label for="company-industry">Industry:</label>
+      <input
+        type="text"
+        id="company-industry"
+        formControlName="companyIndustry"
+      />
+      @if(jobForm.get('companyIndustry').touched &&
+      jobForm.get('companyIndustry').errors?.required){
+      <p class="error-message">Industry is required!</p>
       }
     </div>
     <div class="form-group-btn">

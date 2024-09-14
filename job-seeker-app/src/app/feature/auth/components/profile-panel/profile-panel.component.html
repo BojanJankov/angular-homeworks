@@ -85,7 +85,11 @@
           text="Change"
           [style]="{ borderRadius: '5px' }"
         ></app-button>
-        <app-button text="Save" [style]="{ borderRadius: '5px' }"></app-button>
+        <app-button
+          text="Logout"
+          (btnClick)="onLogoutClick()"
+          [style]="{ borderRadius: '5px' }"
+        ></app-button>
       </div>
     </div>
   </div>

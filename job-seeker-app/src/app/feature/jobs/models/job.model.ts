@@ -1,13 +1,10 @@
 export interface Job {
-  id: string;
-  company: {
-    logo: string;
-    name: string;
-    employees: string;
-    companyDescription: string;
-    state: string;
-    website: string;
-  };
+  id: number;
+  companyLogo: string;
+  companyName: string;
+  companyAddress: string;
+  companyIndustry: string;
+  companyWebsite: string;
   expires: string;
   position: string;
   startingSalary: number;
@@ -15,7 +12,7 @@ export interface Job {
   location: string;
   country: string;
   qualifications: string;
-  description: string;
+  jobDescription: string;
   isApplied: boolean;
 }
 
@@ -26,12 +23,11 @@ export enum JobWorkTypeFilter {
 }
 
 export interface JobFormModel {
-  logo: string;
-  name: string;
-  employees: string;
-  companyDescription: string;
-  state: string;
-  website: string;
+  companyLogo: string;
+  companyName: string;
+  companyAddress: string;
+  companyIndustry: string;
+  companyWebsite: string;
   expires: string;
   position: string;
   startingSalary: number;
@@ -39,5 +35,5 @@ export interface JobFormModel {
   location: string;
   country: string;
   qualifications: string;
-  description: string;
+  jobDescription: string;
 }

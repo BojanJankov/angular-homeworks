@@ -1,9 +1,9 @@
 <div class="job-item">
   <div class="job-item-heading-container">
     <div class="job-item-heading-image-container">
-      <img src="{{ job().company.logo }}" alt="company logo" height="100px" />
+      <img src="{{ job().companyLogo }}" alt="company logo" height="100px" />
     </div>
-    <h2>{{ job().company.name }}</h2>
+    <h2>{{ job().companyName }}</h2>
     <p>{{ job().position }}</p>
   </div>
   <div class="job-item-info-container">
@@ -22,7 +22,7 @@
       <p><strong>Location:</strong> {{ job().location }}</p>
       <p><strong>Country:</strong> {{ job().country }}</p>
       <p><strong>Qualifications:</strong> {{ job().qualifications }}</p>
-      <p><strong>About:</strong> {{ job().description }}</p>
+      <p><strong>About:</strong> {{ job().jobDescription }}</p>
       <div class="more-details-controls">
         <app-button
           text="Company Details"
