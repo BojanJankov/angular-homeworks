@@ -1,11 +1,4 @@
-import {
-  Component,
-  computed,
-  inject,
-  input,
-  model,
-  signal,
-} from '@angular/core';
+import { Component, computed, inject, input } from '@angular/core';
 import { JobsService } from '../../../../core/services/jobs.service';
 import { Job, JobWorkTypeFilter } from '../../models/job.model';
 import { JobItemComponent } from '../job-item/job-item.component';

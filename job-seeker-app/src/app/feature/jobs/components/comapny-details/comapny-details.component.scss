@@ -7,11 +7,11 @@
 .company-details {
   background-color: var(--bg-blue);
   color: var(--bg-white);
-  width: 1100px;
+  width: 600px;
   height: 450px;
+  display: flex;
+  justify-content: center;
   border-radius: 4px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   padding: 40px 60px;
 }
 
@@ -22,7 +22,9 @@
 }
 
 .company-name-container {
-  width: max-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   border-bottom: 0.5px solid var(--bg-grey);
 
   h2 {
@@ -36,26 +38,12 @@
 
   P {
     font-size: 18px;
+    margin: 10px;
   }
 }
 
-.company-description {
-  display: grid;
-  grid-template-rows: max-content 1fr;
-
-  div {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-.company-description-heading {
-  border-bottom: 0.5px solid var(--bg-grey);
-  h2 {
-    margin-bottom: 10px;
-  }
-}
-
-.company-description-text {
-  padding: 50px 0px 50px 20px;
+.company-info-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

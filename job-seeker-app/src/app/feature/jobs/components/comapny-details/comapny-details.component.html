@@ -8,18 +8,11 @@
         <div class="company-name-container">
           <h2>{{ selectedJob().companyName }}</h2>
         </div>
-        <div>
+        <div class="company-info-div">
           <p><strong>Address:</strong> {{ selectedJob().companyAddress }}</p>
           <p><strong>Website:</strong> {{ selectedJob().companyWebsite }}</p>
+          <p><strong>Industry:</strong>{{ selectedJob().companyIndustry }}</p>
         </div>
-      </div>
-    </div>
-    <div class="company-description">
-      <div class="company-description-heading">
-        <h2>About company</h2>
-      </div>
-      <div class="company-description-text">
-        <p>{{ selectedJob().companyIndustry }}</p>
       </div>
     </div>
   </div>
