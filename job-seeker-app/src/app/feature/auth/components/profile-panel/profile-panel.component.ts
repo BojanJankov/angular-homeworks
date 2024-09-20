@@ -27,6 +27,7 @@ export class ProfilePanelComponent {
   }
 
   onLogoutClick() {
+    this.authService.logoutUserFromServer();
     this.authService.logoutUser();
   }
 }

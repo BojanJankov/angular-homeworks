@@ -6,6 +6,7 @@ import {
 } from '../../feature/auth/models/auth.model';
 import { AuthApiService } from './auth-api.service';
 import { Router } from '@angular/router';
+import { tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -34,8 +35,9 @@ export class AuthService {
     this.apiService.loginUser(credentials).subscribe({
       next: (response) => {
         const token = response.headers.get('access-token');
+        const refreshToken = response.headers.get('refresh-token');
 
-        const user = { ...response.body, token };
+        const user = { ...response.body, token, refreshToken };
 
         this.currentUser.set(user);
 
@@ -44,6 +46,10 @@ export class AuthService {
         this.router.navigate(['jobs']);
       },
     });
+  }
+
+  logoutUserFromServer() {
+    this.apiService.logoutUser(this.currentUser().refreshToken).subscribe();
   }
 
   logoutUser() {
@@ -62,5 +68,24 @@ export class AuthService {
     if (!userJSON) return;
 
     this.currentUser.set(JSON.parse(userJSON));
+  }
+
+  refreshAccessToken(refreshToken: string) {
+    return this.apiService.refreshAccessToken(refreshToken).pipe(
+      tap((response) => {
+        console.log('this is from the tap in the auth');
+
+        const token = response.headers.get('access-token');
+        const refreshToken = response.headers.get('refresh-token');
+
+        this.currentUser.update((prevData) => ({
+          ...prevData,
+          token,
+          refreshToken,
+        }));
+
+        this.saveUserInLocalStorage(this.currentUser());
+      })
+    );
   }
 }

@@ -10,6 +10,7 @@ export interface User {
   yearsOfExperience: number;
   workStatus: string;
   token: string;
+  refreshToken: string;
 }
 
 export interface RegisterReq {

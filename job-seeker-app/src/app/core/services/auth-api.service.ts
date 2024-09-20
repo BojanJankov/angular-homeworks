@@ -22,4 +22,21 @@ export class AuthApiService {
       observe: 'response',
     });
   }
+
+  logoutUser(refreshToken: string) {
+    return this.http.get(`${BASE_URL}/auth/logout`, {
+      headers: {
+        'refresh-token': refreshToken,
+      },
+    });
+  }
+
+  refreshAccessToken(refreshToken: string) {
+    return this.http.get(`${BASE_URL}/auth/refresh-token`, {
+      headers: {
+        'refresh-token': refreshToken,
+      },
+      observe: 'response',
+    });
+  }
 }
